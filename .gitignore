@@ -38,3 +38,9 @@ build/
 
 ### VS Code ###
 .vscode/
+target/classes/com/ciencias/CUME/CumeApplication.class
+target/classes/com/ciencias/CUME/api/rest/MessageController.class
+target/test-classes/com/ciencias/CUME/CumeApplicationTests.class
+target/classes/com/ciencias/CUME/CumeApplication.class
+target/classes/com/ciencias/CUME/api/rest/MessageController.class
+target/test-classes/com/ciencias/CUME/CumeApplicationTests.class

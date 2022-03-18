@@ -1,6 +1,6 @@
 <template>
   
-  <h1>{{ msg }}</h1>
+  <!-- <h1>{{ msg }}</h1>-->
   <h3>Installed CLI Plugins</h3>
   <ul>
     <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
@@ -32,13 +32,13 @@ export default {
       msg: ''
     }
   },
-  mounted() {
-    fetch("/api/messages/hello")
-      .then((response) => response.text())
-      .then((data) => {
-          this.msg = data;
-      });
-  }
+  // mounted() {
+  //   fetch("/api/messages/hello")
+  //     .then((response) => response.text())
+  //     .then((data) => {
+  //         this.msg = data;
+  //     });
+  // }
 }
 </script>
 
