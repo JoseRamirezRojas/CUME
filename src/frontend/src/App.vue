@@ -2,6 +2,7 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <div id="app">
     <AppHeader />
+    <router-view></router-view>
     <AppFooter />
   </div>
 </template>
@@ -21,8 +22,8 @@ export default {
 
 <style>
 html, body {
-  margin:0;
-  padding:0px;
+  height:100%;
+  background-color: #fff;
 }
 #app {
   font-family: Roboto, Avenir, Helvetica, Arial, sans-serif;
