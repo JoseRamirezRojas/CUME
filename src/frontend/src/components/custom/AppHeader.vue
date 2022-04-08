@@ -2,8 +2,8 @@
   <header>
     <!-- Navbar -->
     <MDBNavbar  expand="lg" light style="background-color: #e3f2fd"  position="top" container>    
-      <MDBNavbarToggler target="#navbarExample01"></MDBNavbarToggler>
-      <MDBNavbarNav collapse="navbarExample01" 
+      <MDBNavbarToggler data-toggle="collapse"   target="#navbarExample01"></MDBNavbarToggler>
+      <MDBNavbarNav 
       center class="mb-2 mb-lg-0 align-items-center d-flex justify-content-evenly">
         <MDBNavbarBrand href="/" > <i class="fas fa-tint"></i> &nbsp; CUMEX</MDBNavbarBrand>
         
