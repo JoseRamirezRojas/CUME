@@ -1,6 +1,6 @@
 <template>
   <!-- Footer -->
-  <MDBFooter :text="['center', 'lg-start', 'muted']">
+  <MDBFooter :text="['center', 'lg-start', 'muted']" id="footer">
     <!-- Section: Social media -->
     <section class="
         d-flex
@@ -22,15 +22,12 @@
           <MDBIcon iconStyle="fab" icon="twitter"></MDBIcon>
         </a>
         <a href="" class="me-4 text-reset">
-          <MDBIcon iconStyle="fab" icon="google"></MDBIcon>
-        </a>
-        <a href="" class="me-4 text-reset">
           <MDBIcon iconStyle="fab" icon="instagram"></MDBIcon>
         </a>
         <a href="" class="me-4 text-reset">
           <MDBIcon iconStyle="fas" icon="at"></MDBIcon>
         </a>
-        <a href="" class="me-4 text-reset">
+        <a href="https://github.com/JoseRamirezRojas/CUME" class="me-4 text-reset">
           <MDBIcon iconStyle="fab" icon="github"></MDBIcon>
         </a>
       </div>
@@ -39,7 +36,7 @@
     <!-- Section: Social media -->
     <!-- Section: Links  -->
     <section class="">
-      <MDBContainer class="text-center text-md-start mt-5">
+      <MDBContainer class="text-center text-md-start mt-0">
         <!-- Grid row -->
         <MDBRow class="mt-3">
           <!-- Grid column -->
@@ -48,8 +45,8 @@
             <h6 class="text-uppercase fw-bold mb-4">
               <i class="fas fa-tint"></i> La cuenca de México
             </h6>
-            <p>
-              Guía en línea sobre las características y protocolos de evaluación de calidad ecológica en los ríos de la cuenca de México. 
+            <p align="justify">
+              Esta es una guía en línea sobre protocolos de evaluación de calidad ecológica y características de los ríos de la cuenca de México. 
             </p>
           </MDBCol>
           <!-- Grid column -->
@@ -59,16 +56,16 @@
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Sitios de interés</h6>
             <p>
-              <a href="#!" class="text-reset">Bibliografía</a>
+              <a href="https://ecosistemasriberafc.wixsite.com/ecosistemasribera" class="text-reset">Lab. de Ecosistemas de Ribera UNAM</a>
             </p>
             <p>
               <a href="#!" class="text-reset">Normas Oficiales Mexicanas </a>
             </p>
             <p>
-              <a href="#!" class="text-reset">US EPA</a>
+              <a href="https://espanol.epa.gov/espanol/agua" class="text-reset">US EPA</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Directiva Marco del Agua UE</a>
+              <a href="https://www.miteco.gob.es/es/agua/temas/planificacion-hidrologica/marco-del-agua/default.aspx" class="text-reset">Directiva Marco del Agua UE</a>
             </p>
           </MDBCol>
           <!-- Grid column -->
@@ -77,6 +74,9 @@
           <MDBCol md="3" lg="2" xl="2" class="mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Acerca de</h6>
+            <p>
+              <a href="#!" class="text-reset">Bibliografía</a>
+            </p>
             <p>
               <a href="#!" class="text-reset">Aviso Legal</a>
             </p>
