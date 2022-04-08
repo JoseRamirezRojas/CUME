@@ -14,9 +14,11 @@
   </div>
   <div class="column-2" style="background-color:#F8F8F8;">
     <h2>Áreas de conservación </h2>  <br>
-    <p align="justify" >La Ciudad de México está dividido en dos zonas administrativas, el suelo de conservación y la zona urbana.</p>
-    <br>
-    <p align="justify" > Las subcuencas ubicadas en ésta zona son ríos La Magdalena-Eslava, Santo Desierto y Las Regaderas. </p>
+    <p align="justify" >La Ciudad de México está dividido en dos zonas administrativas, el suelo de conservación y la zona urbana. Las subcuencas ubicadas en ésta zona son ríos La Magdalena-Eslava, Santo Desierto y Las Regaderas. </p>
+    <p align="justify" > La cuenca conforma un paisaje diverso y rico en el que, consecuentemente, se presenta un complejo de climas, suelos y vegetación local que debe ser conservado.</p>
+    <div class="bg-image hover-zoom"> 
+      <img src="../assets/conservacion.png" height="510" width="630" class="img-fluid  hover-shadow" alt="..." />
+    </div>
   </div>
 </div>
 

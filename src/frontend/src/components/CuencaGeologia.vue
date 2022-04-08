@@ -16,6 +16,8 @@
     <h2>Geología de la cuenca</h2>  <br>
     <p align="justify" >La Cuenca de México forma parte del Eje Neovolcánico o Faja Volcánica Transmexicana, la cual se extiende en dirección Este-Oeste, atravesando la República Mexicana. Esta zona se considera una provincia fisiográfica independiente al resto de la República y se encuentra limitada por elevaciones topográficas de origen volcánico como la Sierra Guadalupe al norte, la sierra de las Cruces al poniente, la Sierra del Chichinautzin al sur y la Sierra Nevada al oriente.</p>
     <p align="justify">En relación al tipo de sedimento, se caracteriza por una composición de materiales volcánicos, intercalados con aluviones y cubiertos, en la parte central del valle, por arcillas lacustres. La mayor parte de las rocas y materiales que forman el subsuelo son permeables.</p>
+    <img src="../assets/geologia.png" height="400" width="610" class="img-fluid  hover-shadow" alt="..." />
+    <br> <br>
     <p align="justify">Los materiales que constituyen el subsuelo corresponden a una intercalación de productos volcánicos como lavas, tobas y ceniza que incluyen materiales granulares transportados por ríos y arroyos provenientes de las partes topográficamente altas que circularon hacia los valles.</p>
   </div>
 </div>

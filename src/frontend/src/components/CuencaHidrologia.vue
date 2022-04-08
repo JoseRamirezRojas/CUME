@@ -16,7 +16,10 @@
     <h2>Hidrología de la cuenca</h2>  <br>
     <p align="justify" >La cuenca está dividida políticamente en cinco estados de la República Mexicana(Estado de México, Ciudad de México, Tlaxcala, Hidalgo y Puebla) y se caracteriza por ser una zona montañosa que forma numerosos caudales que drenan hacia el valle.</p>
     <p align="justify">Se encuentra en la región morfotectónica de la Faja Volcánica Transmexicana y tiene una superficie total de 9,600 km2, de los cuales 5,518 km2 están en áreas montañosas por encima de los 2,400 metros sobre el nivel del mar. </p>
+    <img src="../assets/condicion_rios.png" height="400" width="610" class="img-fluid  hover-shadow" alt="..." />
+    <br>  <br>
     <p align="justify">El clima de la región es templado subhúmedo (temperatura media anual de 13.4 ºC, la precipitación media anual de entre 1,200 a 1,500 mm). De forma natural, en la cuenca se puede reconocer en los ciclos hidrológicos una época de lluvias (junio a noviembre), otra época de secas frías (diciembre a febrero) y secas cálidas (marzo a mayo); condición que ha sufrido poca modificación a lo largo del tiempo. </p>
+    
   </div>
 </div>
 
