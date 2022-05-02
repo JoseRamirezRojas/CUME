@@ -52,7 +52,7 @@
       </MDBCol>
       <MDBCol>
         <MDBCard>
-          <MDBCardImg src="https://enciclovida.mx/fotoweb/cache/5023/Plantas/GFF0016%20Quercus%20microphylla.t51f9886a.m2400.wConabioCornerCopy.jpg.xPhrow-n4birQpXLzUiyRYei-ZbmhK9kwmPlQNf95mE8.JPG" top alt="enebro" style="max-height: 270px"/>
+          <MDBCardImg src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoGt1sfbTPS5Vvqpa3mmXJSQK6J4SrHVktNA&usqp=CAU" top alt="quercus mycro" style="max-height: 270px"/>
           <MDBCardHeader> <strong>Matorrales de encinos chaparros (Quercus microphylla)</strong> </MDBCardHeader>
           <MDBCardBody>          
             <MDBCardText class="text-start">
