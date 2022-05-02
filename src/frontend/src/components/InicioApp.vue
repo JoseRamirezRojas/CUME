@@ -19,6 +19,7 @@
               class="m-2"
               href="#"
               role="button"
+              @click="navega('/protocolos-info')"
               >Protocolos de evaluación</MDBBtn>
           </div>
         </div>
