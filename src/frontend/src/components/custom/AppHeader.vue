@@ -19,11 +19,11 @@
             Cuenca</MDBBtn>
           <MDBDropdownToggle tag="a" class="nav-link shadow-0" split @click="dropdown1 = !dropdown1"/>
           <MDBDropdownMenu>
-            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-hidrologia')">Hidrología</MDBDropdownItem>
-            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-geologia')">Geología</MDBDropdownItem>
-            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-vegetacion')">Vegetación</MDBDropdownItem>
-            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-conservacion')">Conservación</MDBDropdownItem>
-            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-jurisdiccion')">Marco jurídico</MDBDropdownItem>
+            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-hidrologia')">Hidrología</MDBDropdownItem>
+            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-geologia')">Geología</MDBDropdownItem>
+            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-vegetacion')">Vegetación</MDBDropdownItem>
+            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-conservacion')">Conservación</MDBDropdownItem>
+            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-jurisdiccion')">Marco jurídico</MDBDropdownItem>
           </MDBDropdownMenu>
         </MDBDropdown>
 
@@ -31,7 +31,7 @@
           <MDBBtn class="shadow-0  nav-link"
             style="background-color: #e3f2fd"
             size="lg"
-            @click="dropdown2 = false, navega('/cuenca-mexico')">
+            @click="dropdown2 = false, navega('/protocolos-info')">
             Bioindicadores</MDBBtn>
           <MDBDropdownToggle tag="a" class="nav-link shadow-0" split @click="dropdown2 = !dropdown2"/>
           <MDBDropdownMenu>
