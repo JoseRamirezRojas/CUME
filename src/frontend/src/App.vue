@@ -1,5 +1,7 @@
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+
+  <!--Button to go back to top of page, goes over any other element -->  
   <div id="app">
     <button 
         type="button"
@@ -7,8 +9,8 @@
         id="btn-back-to-top"
         @click="backToTop()"
         >
-  <i class="fas fa-arrow-up"></i>
-</button>
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <AppHeader />
     <router-view></router-view>
     <AppFooter />
@@ -57,9 +59,10 @@ html, body {
 }
 
 #btn-back-to-top {
-  position: fixed;
+  position:  fixed;
   bottom: 30px;
   right: 30px;
+  z-index: 999999;
   display: none;
 }
 

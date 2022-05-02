@@ -3,7 +3,7 @@
     <div
       class="text-center align-items-center d-flex bg-image hover-zoom "
       style="
-        height: 550px;
+        height 550px;
       ">
       <img class = "vid" src= '../assets/home_cuenca.jpg '/>
       <div class="mask " style="background-color: rgba(0, 0, 0, 0.3);">

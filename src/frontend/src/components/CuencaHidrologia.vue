@@ -1,12 +1,12 @@
 <template>
 
 <div class="row">
-  <div class="column-1" style="background-color: #e3f2fd">
+  <div class="column" style="background-color: #e3f2fd">
     <MDBListGroup  id="inner" >
       <MDBListGroupItem tag="button" @click="navega('/cuenca-mexico')" action >La cuenca</MDBListGroupItem>
       <MDBListGroupItem tag="button" action active>Hidrología </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-geologia')" action >Geología </MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>Vegetación y uso de suelo</MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>Clima y vegetación</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>Áreas de conservación </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Gestión y marco jurídico</MDBListGroupItem>
     </MDBListGroup>
@@ -35,19 +35,33 @@
   display: flex;
 }
 
-/* Create two equal columns that sits next to each other */
-.column-1 {
-  flex: 25%;
-  padding-top: 30px;
-  /*padding-left: 50px;*/
-  min-height: 100px;
-  overflow: hidden;
+/* Create two columns that sits next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  padding-top: 25px;
 }
 .column-2 {
-  flex: 75%;
-  padding: 40px;
-  min-height: 100px;
-  overflow: hidden;
+  float: left;
+  width: 75%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .column-2 {
+    width: 100%;
+  }
 }
 
 #inner {
