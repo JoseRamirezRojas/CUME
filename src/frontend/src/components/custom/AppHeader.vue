@@ -19,11 +19,11 @@
             Cuenca</MDBBtn>
           <MDBDropdownToggle tag="a" class="nav-link shadow-0" split @click="dropdown1 = !dropdown1"/>
           <MDBDropdownMenu>
-            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-hidrologia')">Hidrología</MDBDropdownItem>
-            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-geologia')">Geología</MDBDropdownItem>
-            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-vegetacion')">Vegetación</MDBDropdownItem>
-            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-conservacion')">Conservación</MDBDropdownItem>
-            <MDBDropdownItem  @click="dropdown1 = !dropdown1, navega('/cuenca-jurisdiccion')">Marco jurídico</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-hidrologia')">Hidrología</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-geologia')">Geología</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-vegetacion')">Vegetación</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-conservacion')">Conservación</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown1 = !dropdown1, navega('/cuenca-jurisdiccion')">Marco jurídico</MDBDropdownItem>
           </MDBDropdownMenu>
         </MDBDropdown>
 
@@ -35,7 +35,7 @@
             Bioindicadores</MDBBtn>
           <MDBDropdownToggle tag="a" class="nav-link shadow-0" split @click="dropdown2 = !dropdown2"/>
           <MDBDropdownMenu>
-            <MDBDropdownItem href="#">Calidad fisicoquímica</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-fisicoquimica')">Calidad fisicoquímica</MDBDropdownItem>
             <MDBDropdownItem href="#">Calidad hidromorfológica</MDBDropdownItem>
             <MDBDropdownItem href="#">Diatomeas</MDBDropdownItem>
             <MDBDropdownItem href="#">Macroalgas</MDBDropdownItem>
@@ -70,7 +70,6 @@
   } from 'mdb-vue-ui-kit';
   import { ref } from 'vue';
   import router from '../../router'
-
   export default {
     components: {
       MDBNavbar,
@@ -94,7 +93,6 @@
         dropdown2,
       };
     },
-
     methods: {
     navega: function(url) {
       router.push(url).catch(()=>{});
