@@ -49,8 +49,76 @@
           <br> <br>
           <p align="justify"> En esta figura tenemos el perfil de un río en el que se calcula el aforo. El área de los extremos es un triángulo y las áreas intemedias son polígonos cuadrangulares.</p>
           <br>
-          <p class="fs-3">Nutrientes</p>
+          <h1 class="display-6">Nutrientes</h1>
           <p align="justify"> En general, la cuenca de México presenta una baja concentración de micronutrientes en el nacimiento de los ríos y se puede ir incrementando a lo largo del cauce. </p>
+          <p align="justify"> La concentración de micronutrientes en el agua es el parámetro que puede definir el su uso para el humano. Generalmente la concentración de fósforo y nitrógeno total evidencían la limitación (sistemas oligotróficos) o el excedente por aportes externos al río (sistemas eutróficos). </p>
+          <p align="justify"> Como referencia, en la siguiente tabla se encuentran los límites sugeridos según varias obras para la clasificación trófica de ríos y relación de uso del agua: </p>
+          <MDBTable borderless>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Parámetro (unidades)</th>
+                <th scope="col">Límite oligotrófico-mesotrófico</th>
+                <th scope="col">Límite mesotrófico-eutrófico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  class="table-active">
+                <th  scope="row">Doods (1998) &emsp; &emsp;  </th>    <td></td> <td></td>
+                
+              </tr>
+              <tr>
+                <td scope="row">Nitrógeno total <i>(μg/l)</i> </td>
+                <td>700</td>
+                <td>1500</td>
+              </tr>
+              <tr>
+                <td scope="row">Fósforo total <i>(μg/l)</i></td>
+                <td>25</td>
+                <td>75</td>
+              </tr>
+              <tr class="table-active">
+                <th scope="row">Vida acuática, DOF (2012) &emsp; &emsp; </th>    <td></td> <td></td>
+              </tr>
+              <tr>
+                <td scope="row">Nitrógeno total <i>(mg/l) </i><sub>(promedio mensual) </sub> </td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td scope="row">Fósforo total <i>(mg/l)</i> <sub>(promedio mensual) </sub></td>
+                <td>5</td>
+              </tr>
+              <tr  class="table-active">
+                <th scope="row">Uso público e infiltración, DOF (1997) &emsp; &emsp; </th>    <td></td> <td></td>
+              </tr>
+              <tr>
+                <td scope="row">Nitrógeno total <i> (mg/l)</i></td>
+                <td>40</td>
+              </tr>
+              <tr>
+                <td scope="row">Fósforo total <i>(mg/l)</i> </td>
+                <td>20</td>
+              </tr>
+              <tr  class="table-active">
+                <th scope="row">Uso y consumo humano, DOF (2012) &emsp; &emsp; </th>    <td></td> <td></td>
+              </tr>
+              <tr>
+                <td scope="row">Nitratos <i> (mg/l)</i>  </td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td scope="row">Nitritos <i> (mg/l) </i></td>
+                <td>0.05</td>
+              </tr>
+              <tr>
+                <td scope="row">Nitrógeno amoniacal <i>(mg/l) </i></td>
+                <td>0.5</td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify">El registro de las formas particuladas e inorgánicas del nitrógeno (nitrito, nitrato y amonio) e inorgánicas del fósforo (ortofosfatos), determinan la predominancia de los grupos algales que lo pueden incorporar por metabolismos particulares. O bien, determinar las fuentes de contaminación de compuestos químicos inorgánicos por aguas residuales urbanas o agroquímicos. </p>
+          <p align="justify"> También se pueden evaluar diversos macronutrientes para determinar la disponibilidad de algunos elementos inorgánicos que requieren algunos organismos para su desarrollo metabólico o estructura celular. Por ejemplo, carbonatos y sulfatos que se requieren para realizar la fotosíntesis y la fabricación de mucílago extracelular. </p>
+
+          
         </MDBTabPane>
 
         <!-- Calculo con microservicio-->
@@ -118,7 +186,8 @@
            MDBTabNav,
            MDBTabContent,
            MDBTabItem,
-           MDBTabPane, } from "mdb-vue-ui-kit";
+           MDBTabPane,
+           MDBTable } from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
   export default {
@@ -130,11 +199,7 @@
       MDBTabContent,
       MDBTabItem,
       MDBTabPane,
-    },
-    data() {
-      return {
-        formula: '$$x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}.$$'
-      }
+      MDBTable
     },
     setup() {
       const activeTabId= ref('info-1');
