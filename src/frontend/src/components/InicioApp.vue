@@ -10,6 +10,7 @@
         <div class="d-flex justify-content-center align-items-center h-100">
           <div class="text-white">
             <h1 class="mb-3">Cuenca de México</h1>
+            <h2> {{ msg }} </h2>
             <MDBBtn lg tag="a" outline="light"
               class="m-2"
               role="button"
@@ -54,6 +55,19 @@
       navega: function(url) {
       router.push(url).catch(()=>{});
       },
+    },
+
+    data() {
+      return {
+        msg: ''
+      }
+    },
+    mounted() {
+      fetch("/api/messages/hello")
+        .then((response) => response.text())
+        .then((data) => {
+            this.msg = data;
+        });
     }
   };
 </script>
