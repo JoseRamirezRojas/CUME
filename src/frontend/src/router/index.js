@@ -8,6 +8,8 @@ import CuencaVegetacion     from '@/components/CuencaVegetacion'
 import CuencaConservacion   from '@/components/CuencaConservacion'
 import CuencaJurisdiccion   from '@/components/CuencaJurisdiccion'
 import ProtocolosInicio     from '@/components/ProtocolosInicio'
+import ProtocoloFisicoQuim  from '@/components/ProtocoloFisicoQuim'
+
 
 const routes = [
     // {
@@ -54,6 +56,11 @@ const routes = [
       path: '/protocolos-info',
       name: 'protocolos-info',
       component: ProtocolosInicio,  
+    },
+    {
+      path: '/protocolo-fisicoquimica',
+      name: 'protocolo-fisicoquimica',
+      component: ProtocoloFisicoQuim,  
     },
 ]
 const router = createRouter({

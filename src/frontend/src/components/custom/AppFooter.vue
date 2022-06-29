@@ -59,7 +59,7 @@
               <a href="https://ecosistemasriberafc.wixsite.com/ecosistemasribera" class="text-reset">Lab. de Ecosistemas de Ribera UNAM</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Normas Oficiales Mexicanas </a>
+              <a href="./assets/files/NOM_001_002_003_SEMARNAT.pdf " class="text-reset">Normas Oficiales Mexicanas </a>
             </p>
             <p>
               <a href="https://espanol.epa.gov/espanol/agua" class="text-reset">US EPA</a>
