@@ -18,14 +18,14 @@
     <MDBTabs v-model="activeTabId">
       <!-- Tabs navs -->
       <MDBTabNav pills justify tabsClasses="mb-3">
-        <MDBTabItem tabId="info-1" href="info-1">Información acerca del protocolo</MDBTabItem>
-        <MDBTabItem tabId="calculo-1" href="calculo-1">Cálculo en línea de calidad fisicoquimica </MDBTabItem>
+        <MDBTabItem tabId="info-fisicoquim" href="info-fisicoquim">Información acerca del protocolo</MDBTabItem>
+        <MDBTabItem tabId="calculo-fisicoquim" href="calculo-fisicoquim">Cálculo  de calidad fisicoquimica </MDBTabItem>
       </MDBTabNav>
       <!-- Tabs navs -->
       <!-- Tabs content -->
       <MDBTabContent>
         <!-- info protocolo-->
-        <MDBTabPane tabId="info-1">
+        <MDBTabPane tabId="info-fisicoquim">
           <p align="justify" > De acuerdo con las características fisicoquímicas, los ríos de la cuenca de México se definen como arroyos de montaña de una región subtropical, agua templada entre 5 - 17 °C, moderadamente ácida con pH 5.5 - 8, y poco mineralizada (34.5-175 μS/cm). La mayoría de las sitios evaluados presentan un caudal permanente con variable aforo (0.01-1.5 ㎥/s), que se puede atribuir a la estacionalidad, aunque en la parte media y baja de las cuencas, se debe también a la extracción in situ de estructuras de regulación hídrica. El nitrógeno inorgánico disuelto y el fósforo reactivo soluble coinciden con lugares donde se permiten actividades humanas con usos directos del agua del río. </p>
           <br>
           <img src="../assets/fisicoquim_1.jpg" width="237" class="img-fluid  hover-shadow" alt="..." style="float:right;
@@ -122,8 +122,623 @@
         </MDBTabPane>
 
         <!-- Calculo con microservicio-->
-        <MDBTabPane tabId="calculo-1">Tab 2 content
+        <MDBTabPane tabId="calculo-fisicoquim">
+        <h1 class="display-5">Cálculo del protocolo</h1>
+        <br> <p align="justify"> Aquí puedes introducir los parámetros fisicoquímicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
+        <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
+            <MDBRow> 
+              <MDBCol >
+                <p> <b>Parámetros físicos</b> </p>
+              </MDBCol>
+            </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Temp. agua <i>(°C) </i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.temperatura1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.temperatura2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.temperatura3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p>Conduct. específica <i> (μS)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.conductividad1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.conductividad2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.conductividad3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p>Oxígeno disuelto <i> (%)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.oxiDisuelto1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.oxiDisuelto2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.oxiDisuelto3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p>Oxígeno solubre <i> (mg/l)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.oxiSolubre1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.oxiSolubre2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.oxiSolubre3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+              <MDBCol >
+                <p> <b>Parámetros químicos</b> </p>
+              </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> pH </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.pH1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.pH2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.pH3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Fósforo <i> (mg/l)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.fosforo1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.fosforo2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.fosforo3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Nitrito <i> (mg/l)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.nitrito1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.nitrito2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.nitrito3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Nitrato <i> (mg/l)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.nitrato1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.nitrato2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.nitrato3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Amonio <i> (mg/l)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.amonio1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.amonio2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.amonio3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+           <MDBRow> 
+              <MDBCol >
+                <p> <b>Sustrato inorgánico (% de composición en el área muestreada)</b> </p>
+              </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Rocas <i>(>256 mm) </i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.rocas1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.rocas2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.rocas3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Canto <i>  (64-256 mm)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.canto1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.canto2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.canto3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Grava  <i> (2-64 mm) </i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.grava1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.grava2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.grava3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Arena  <i> (0.06-2 mm)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.arena1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.arena2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.arena3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p> Arcilla  <i> (0.004 mm)</i> </p>
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 1"
+                v-model="form.arcilla1"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 2"
+                v-model="form.arcilla2"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              />
+            </MDBCol>
+            <MDBCol >
+              <MDBInput
+                label="test 3"
+                v-model="form.arcilla3"
+                invalidFeedback="Llena este campo"
+                validFeedback="¡Listo!"
+                validationEvent="input"
+                required
+                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
+                title="Favor de introducir un número"
+              >
+              </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> <br> <MDBBtn color="primary" type="submit" >Generar</MDBBtn> </MDBRow>
+          
+        </MDBRow>
+        <!-- <MDBBtn color="primary" block class="mb-4" @click="stingify" > Genera </MDBBtn>-->
+
+        <br>
+        <!-- Imagen de ejemplo de llenado -->
+        <h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
         </MDBTabPane>
+        
       </MDBTabContent>
       <!-- Tabs content -->
     </MDBTabs>
@@ -187,9 +802,13 @@
            MDBTabContent,
            MDBTabItem,
            MDBTabPane,
-           MDBTable } from "mdb-vue-ui-kit";
+           MDBTable,
+           MDBBtn,MDBRow,
+           MDBCol,
+           MDBInput } from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
+  import axios from 'axios';
   export default {
     components: {
       MDBListGroup,
@@ -199,18 +818,98 @@
       MDBTabContent,
       MDBTabItem,
       MDBTabPane,
-      MDBTable
+      MDBTable,
+      MDBBtn,
+      MDBRow,
+      MDBCol,
+      MDBInput
     },
     setup() {
-      const activeTabId= ref('info-1');
+      const checkForm = (e) => {
+        e.target.classList.add('was-validated');
+      };
+      const activeTabId = ref('info-fisicoquim');
       return {
         activeTabId,
+        checkForm,
+
+        form: {
+          temperatura1: null,
+          temperatura2: null,
+          temperatura3: null,
+          conductividad1: null,
+          conductividad2: null,
+          conductividad3: null,
+          oxiDisuelto1: null,
+          oxiDisuelto2: null,
+          oxiDisuelto3: null,
+          oxiSolubre1: null,
+          oxiSolubre2: null,
+          oxiSolubre3: null,
+          pH1: null,
+          pH2: null,
+          pH3: null,
+          fosforo1: null,
+          fosforo2: null,
+          fosforo3: null,
+          nitrito1: null,
+          nitrito2: null,
+          nitrito3: null,
+          nitrato1: null,
+          nitrato2: null,
+          nitrato3: null,
+          amonio1: null,
+          amonio2: null,
+          amonio3: null,
+          rocas1: null,
+          rocas2: null,
+          rocas3: null,
+          canto1: null,
+          canto2: null,
+          canto3: null,
+          grava1: null,
+          grava2: null,
+          grava3: null,
+          arena1: null,
+          arena2: null,
+          arena3: null,
+          arcilla1: null,
+          arcilla2: null,
+          arcilla3: null
+        } 
       };
     },
     methods: {
-    navega: function(url) {
-      router.push(url).catch(()=>{});
-      },
+      navega: function(url) {
+        router.push(url).catch(()=>{});
+        },
+      // stingify(){
+      //   console.log(JSON.stringify(this.form))
+      // },
+      genera(event){
+        event.preventDefault()
+        console.log("se llega aqui")
+
+        axios.post(`/api/physchem/export/excel`, JSON.stringify(this.form)  ,{ 
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          }, responseType : 'blob'}
+          ).then(resp => {
+            
+            const url = window.URL.createObjectURL(new Blob([resp.data],
+              { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'file.xlsx'); //or any other extension
+            document.body.appendChild(link);
+            link.click();
+
+          });
+        console.log("tambien aqui :/") 
+        
+      }
     }
+    
   };
 </script>
