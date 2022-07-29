@@ -1,2 +1,7 @@
+com/ciencias/CUME/api/model/PhysChemData.class
 com/ciencias/CUME/CumeApplication.class
-com/ciencias/CUME/api/rest/MessageController.class
+com/ciencias/CUME/api/service/UserExcelExporter.class
+com/ciencias/CUME/api/controller/UserController.class
+com/ciencias/CUME/api/service/PhysChemService.class
+com/ciencias/CUME/api/controller/MessageController.class
+com/ciencias/CUME/api/controller/PhysChemController.class

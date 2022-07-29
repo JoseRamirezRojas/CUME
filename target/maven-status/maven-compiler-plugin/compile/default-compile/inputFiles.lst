@@ -1,2 +1,7 @@
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/model/PhysChemData.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/UserExcelExporter.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/MessageController.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/CumeApplication.java
-/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/rest/MessageController.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/PhysChemService.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/PhysChemController.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/UserController.java
