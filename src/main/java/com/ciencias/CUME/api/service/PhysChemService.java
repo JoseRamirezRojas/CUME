@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DataFormat;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -226,10 +227,12 @@ public class PhysChemService {
      
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
         Cell cell = row.createCell(columnCount);
+        DataFormat format = workbook.createDataFormat();
         if (value instanceof Integer) {
             cell.setCellValue((Integer) value);
         } else if (value instanceof Float) {
             cell.setCellValue((Float) value);
+            style.setDataFormat(format.getFormat("0.00"));
         } else if (value instanceof Boolean) {
             cell.setCellValue((Boolean) value);
         } else {
@@ -256,7 +259,9 @@ public class PhysChemService {
     }
 
     private void createFormulaCell(Row row, int columnCount, String formula, CellStyle style) {
+        DataFormat format = workbook.createDataFormat();
         Cell cell = row.createCell(columnCount);
+        style.setDataFormat(format.getFormat("0.00"));
         cell.setCellFormula(formula);
         cell.setCellStyle(style);
     }
