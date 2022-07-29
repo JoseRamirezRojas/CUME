@@ -1,4 +1,4 @@
-package com.ciencias.CUME.api.rest;
+package com.ciencias.CUME.api.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
