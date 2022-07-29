@@ -41,7 +41,7 @@
           <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= B·h/2</i> , donde <i>B</i> = distancia entre la orilla y primera medida del ancho del cauce,
             y <i>h</i> = primera profundidad a partir de la orilla. </p>
           <p align="justify"> Para el resto de las áreas se calculan considerando un polígono cuadrangular y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= (B·b)h/2</i> , donde <i>B</i> = 1<sup>a</sup> profundidad,  <i>b</i> = 2<sup>a</sup> profundidad,
+          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= (B+b)h/2</i> , donde <i>B</i> = 1<sup>a</sup> profundidad,  <i>b</i> = 2<sup>a</sup> profundidad,
             y <i>h</i> = distancia del intervalo. </p>
           <p align="justify"> Cada área calculada la multiplicamos por su velocidad de corriente para obtener aforos parciales y obtenemos el aforo total calculando la suma de los aforos parciales.</p>
           <p align="justify" class="fs-5"> &emsp; &emsp; <i>ΣQ = A·V</i> </p>
