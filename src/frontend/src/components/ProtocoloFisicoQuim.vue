@@ -896,12 +896,11 @@
             Accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
           }, responseType : 'blob'}
           ).then(resp => {
-            
             const url = window.URL.createObjectURL(new Blob([resp.data],
-              { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }));
+              { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" })); //excel file
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'file.xlsx'); //or any other extension
+            link.setAttribute('download', 'ProtocoloFisicoQuimica.xlsx'); 
             document.body.appendChild(link);
             link.click();
 
