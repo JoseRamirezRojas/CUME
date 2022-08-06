@@ -5,7 +5,7 @@
     <MDBListGroup  id="inner" >
       <MDBListGroupItem tag="button" action active>Protocolos</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')" action > Calidad fisicoquímica </MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-geologia')" action > HYQI </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
