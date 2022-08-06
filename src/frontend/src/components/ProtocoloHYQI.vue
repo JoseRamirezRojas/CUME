@@ -4,8 +4,8 @@
   <div class="column" style="background-color: #e3f2fd">
     <MDBListGroup  id="inner" >
       <MDBListGroupItem tag="button" @click="navega('/protocolos-info')" action >Protocolos</MDBListGroupItem>
-      <MDBListGroupItem tag="button" action active> Calidad fisicoquímica </MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')"> Calidad fisicoquímica </MDBListGroupItem>
+      <MDBListGroupItem tag="button" action active> HYQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
@@ -18,113 +18,239 @@
     <MDBTabs v-model="activeTabId">
       <!-- Tabs navs -->
       <MDBTabNav pills justify tabsClasses="mb-3">
-        <MDBTabItem tabId="info-fisicoquim" href="info-fisicoquim">Información acerca del protocolo</MDBTabItem>
-        <MDBTabItem tabId="calculo-fisicoquim" href="calculo-fisicoquim">Cálculo  de calidad fisicoquimica </MDBTabItem>
+        <MDBTabItem tabId="info-hyqi" href="info-hyqi">Información acerca del protocolo</MDBTabItem>
+        <MDBTabItem tabId="calculo-hyqi" href="calculo-hyqi">Cálculo  de calidad fisicoquimica </MDBTabItem>
       </MDBTabNav>
       <!-- Tabs navs -->
       <!-- Tabs content -->
       <MDBTabContent>
         <!-- info protocolo-->
-        <MDBTabPane tabId="info-fisicoquim">
-          <p align="justify" > De acuerdo con las características fisicoquímicas, los ríos de la cuenca de México se definen como arroyos de montaña de una región subtropical, agua templada entre 5 - 17 °C, moderadamente ácida con pH 5.5 - 8, y poco mineralizada (34.5-175 μS/cm). La mayoría de las sitios evaluados presentan un caudal permanente con variable aforo (0.01-1.5 ㎥/s), que se puede atribuir a la estacionalidad, aunque en la parte media y baja de las cuencas, se debe también a la extracción in situ de estructuras de regulación hídrica. El nitrógeno inorgánico disuelto y el fósforo reactivo soluble coinciden con lugares donde se permiten actividades humanas con usos directos del agua del río. </p>
-          <br>
-          <img src="../assets/fisicoquim_1.jpg" width="237" class="img-fluid  hover-shadow" alt="..." style="float:right;
-          margin-left: 20px" />
-          <p align="justify">La temperatura del agua es el parámetro que determina gran parte de los procesos fisicoquímicos y biológicos en el agua. Siempre es importante medirla e intentar determinar su relación con las distintas épocas del año, la altitud del río y las posibles acciones humanas que pueden modificarla (por ejemplo represamientos donde se almacena y calienta el agua). La temperatura del agua siempre se tiene que registrar ya que puede modificarse en unos cuantos centímetros a partir del nacimiento de agua o en zonas donde el río acumula agua y registra más de un metro de profundidad. Esta se registra con termómetros o sensores acoplados a dataloggers. </p>  
-          <br>
-          <p align = "justify"> La velocidad de corriente (V) y el aforo (Q), expresado en ㎥/s, se registran con un medidor de corriente y representa el tiempo que tarda en recorrer un objeto una distancia conocida, es decir:</p>
-          <p align="justify"  class="fs-5"> &emsp; &emsp;<i>V</i> =  <i >d/t </i> , donde <i> d </i> = distancia y <i> t </i> = tiempo </p>
-          <p align="justify">  La estimación del aforo del río permite comparar la cantidad de
-            agua que pasa en el sitio de colecta en distinta época del año. Se recomienda registrar los valores en el mismo punto en cada momento y se usa la siguiente fórmula: </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>Q = A·V</i> </p>
-          <p align="justify"> Para las orillas calculamos un triángulo, y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= B·h/2</i> , donde <i>B</i> = distancia entre la orilla y primera medida del ancho del cauce,
-            y <i>h</i> = primera profundidad a partir de la orilla. </p>
-          <p align="justify"> Para el resto de las áreas se calculan considerando un polígono cuadrangular y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= (B+b)h/2</i> , donde <i>B</i> = 1<sup>a</sup> profundidad,  <i>b</i> = 2<sup>a</sup> profundidad,
-            y <i>h</i> = distancia del intervalo. </p>
-          <p align="justify"> Cada área calculada la multiplicamos por su velocidad de corriente para obtener aforos parciales y obtenemos el aforo total calculando la suma de los aforos parciales.</p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>ΣQ = A·V</i> </p>
-          <img src="../assets/fig_aforo.png" height="400" width="610" class="img-fluid  hover-shadow" alt="ejemplo aforo" />
-          <br> <br>
-          <p align="justify"> En esta figura tenemos el perfil de un río en el que se calcula el aforo. El área de los extremos es un triángulo y las áreas intemedias son polígonos cuadrangulares.</p>
-          <br>
-          <h1 class="display-6">Nutrientes</h1>
-          <p align="justify"> En general, la cuenca de México presenta una baja concentración de micronutrientes en el nacimiento de los ríos y se puede ir incrementando a lo largo del cauce. </p>
-          <p align="justify"> La concentración de micronutrientes en el agua es el parámetro que puede definir el su uso para el humano. Generalmente la concentración de fósforo y nitrógeno total evidencían la limitación (sistemas oligotróficos) o el excedente por aportes externos al río (sistemas eutróficos). </p>
-          <p align="justify"> Como referencia, en la siguiente tabla se encuentran los límites sugeridos según varias obras para la clasificación trófica de ríos y relación de uso del agua: </p>
+        <MDBTabPane tabId="info-hyqi">
+          <p align="justify" > El artículo 3, fracción XLVII, de la Ley de Aguas Nacionales, define como “Ribera o Zona Federal” a las fajas de diez metros de anchura contiguas al cauce de las corrientes o al vaso de los depósitos de propiedad nacional, medidas horizontalmente a partir del nivel de aguas máximas ordinarias. </p>
+          <p align="justify">El ecosistema de ribera es un elemento importante en el funcionamiento de un río, sus dimensiones laterales y afluentes, así como muchas de sus dimensiones verticales, están contenidas en su hábitat. Provee servicios a las poblaciones como el suministro de agua, para consumo humano y para el desarrollo de agricultura, ganadería, industria; purificación y transporte de agua, sedimentos y nutrientes; control de inundaciones y sequías; hábitat para las especies; retención de suelo y valores escénicos, culturales y de recreación </p>  
+          <h1 class="display-6">Calidad Hidromorfológica</h1>
+          <p align = "justify"> El protocolo HYQI (por sus siglas en inglés HYdromorphological Quality Index) incluye datos generales sobre el sitio de muestreo; registro de parámetros físicos y químicos del agua; porcentaje de la composición del sustrato; tipo de bosque del sitio de muestreo, forma de vida predominante. El protocolo contiene doce parámetros hidromorfológicos a evaluar, divididos en tres secciones (las tablas provistas ayudan al reconocimiento de cada uno de los parámetros descritos). </p>
+          <p align="justify"  class="fs-4">Sección 1: La calidad de la cuenca</p>
+          <p align="justify" >  Se examina la cobertura vegetal, la estabilidad del banco, talla del sustrato y desarrollo de ganadería y agricultura en la zona de ribera:</p>
           <MDBTable borderless responsive>
             <thead class="table-info">
               <tr>
-                <th scope="col">Parámetro (unidades)</th>
-                <th scope="col">Límite oligotrófico-mesotrófico</th>
-                <th scope="col">Límite mesotrófico-eutrófico</th>
+                <th scope="col">Banco estable </th>
+                <th scope="col">Banco parcialmente erosionado</th>
+                <th scope="col">Banco totalmente erosionado</th>
               </tr>
             </thead>
             <tbody>
-              <tr  class="table-active">
-                <th  scope="row">Doods (1998) &emsp; &emsp;  </th>    <td></td> <td></td>
-                
-              </tr>
               <tr>
-                <td scope="row">Nitrógeno total <i>(μg/l)</i> </td>
-                <td>700</td>
-                <td>1500</td>
-              </tr>
-              <tr>
-                <td scope="row">Fósforo total <i>(μg/l)</i></td>
-                <td>25</td>
-                <td>75</td>
-              </tr>
-              <tr class="table-active">
-                <th scope="row">Vida acuática, DOF (2012) &emsp; &emsp; </th>    <td></td> <td></td>
-              </tr>
-              <tr>
-                <td scope="row">Nitrógeno total <i>(mg/l) </i><sub>(promedio mensual) </sub> </td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td scope="row">Fósforo total <i>(mg/l)</i> <sub>(promedio mensual) </sub></td>
-                <td>5</td>
-              </tr>
-              <tr  class="table-active">
-                <th scope="row">Uso público e infiltración, DOF (1997) &emsp; &emsp; </th>    <td></td> <td></td>
-              </tr>
-              <tr>
-                <td scope="row">Nitrógeno total <i> (mg/l)</i></td>
-                <td>40</td>
-              </tr>
-              <tr>
-                <td scope="row">Fósforo total <i>(mg/l)</i> </td>
-                <td>20</td>
-              </tr>
-              <tr  class="table-active">
-                <th scope="row">Uso y consumo humano, DOF (2012) &emsp; &emsp; </th>    <td></td> <td></td>
-              </tr>
-              <tr>
-                <td scope="row">Nitratos <i> (mg/l)</i>  </td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td scope="row">Nitritos <i> (mg/l) </i></td>
-                <td>0.05</td>
-              </tr>
-              <tr>
-                <td scope="row">Nitrógeno amoniacal <i>(mg/l) </i></td>
-                <td>0.5</td>
+                <td > <img src="../assets/banco_estable_hyqi.jpg" alt="banco estable" 
+                  style="width: 163px; height: 126px;" class="rounded" /> </td>
+                <td><img src="../assets/banco_parc_estable.jpg" alt="banco parcialmente estable" 
+                  style="width: 160px; height: 126px;" class="rounded" /></td>
+                <td><img src="../assets/banco_tot_erosionado.jpg" alt="banco erosionado" 
+                  style="width: 160px; height: 126px;" class="rounded" /></td>
               </tr>
             </tbody>
           </MDBTable>
-          <p align="justify">El registro de las formas particuladas e inorgánicas del nitrógeno (nitrito, nitrato y amonio) e inorgánicas del fósforo (ortofosfatos), determinan la predominancia de los grupos algales que lo pueden incorporar por metabolismos particulares. O bien, determinar las fuentes de contaminación de compuestos químicos inorgánicos por aguas residuales urbanas o agroquímicos. </p>
-          <p align="justify"> También se pueden evaluar diversos macronutrientes para determinar la disponibilidad de algunos elementos inorgánicos que requieren algunos organismos para su desarrollo metabólico o estructura celular. Por ejemplo, carbonatos y sulfatos que se requieren para realizar la fotosíntesis y la fabricación de mucílago extracelular. </p>
+          <p align="justify" > Las características del sustrato relaciona la heterogeneidad del sustrato orgánico e inorgánico y define el número de microambientes potenciales en los que se pueden desarrollar organismos acuáticos:</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sustratos inorgánicos (arena, grava, roca emergente) </th>
+                <th scope="col">Sustratos orgánicos (algas, vegetación acuática)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sust_inorg.jpg" alt="inorganico" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/sust_organ.jpg" alt="organico" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify"> Las principales intervenciones humanas en los ríos son por la presencia de trucheros, actividades agrícolas y ganaderas:</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin presencia de cultivos o zonas para el ganado </th>
+                <th scope="col">+80% de suelo para uso piscícola, agrícola y ganadero</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sin_ganaderia.jpg" alt="buen suelo" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/con_ganaderia.jpg" alt="suelo usado" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
 
-          
+          <p align="justify" class="fs-4">Sección 2: La hidrología del río</p>
+          <p align="justify" >  Se examina la hidrología según la naturalidad del canal, se tienen en cuenta las interrupciones del flujo por la construcción de presas.</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin presencia de  presas</th>
+                <th scope="col">Presencia de presas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sin_presas.jpg" alt="sin presa" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/con_presas.jpg" alt="con presa" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify" >El régimen de velocidad y profundidad se determina observando la presencia de cuatro combinaciones posibles en el lecho del río: rápido-somero, rápido-profundo, lento-somero y lento-profundo. Una zona somera es aquella con profundidades menores a 0.4 <i>m</i> y una zona rápida está por encima de los 0.3 <i>m/s</i> </p>
+          <img src="../assets/reg_velprof.jpg" height="220" width="570" class="img-fluid  hover-shadow" alt="ejemplo aforo" />  <br><br>
+          <p align="justify"> La alteración del canal se puede reconocer por la construcción de infraestructura aledaña al margen de ambos lados del río.</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin alteraciones en el canal</th>
+                <th scope="col">Alteraciones parciales</th>
+                <th scope="col">Canal totalmente modificado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sin_alteracion.jpg" alt="nada alterado" 
+                  style="width: 163px; height: 126px;" class="rounded" /> </td>
+                <td><img src="../assets/alteracion_parc.jpg" alt="Alteraciones parciales" 
+                  style="width: 160px; height: 126px;" class="rounded" /></td>
+                  <td><img src="../assets/alteracion_total.jpg" alt="todo alterado" 
+                  style="width: 160px; height: 126px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify"> El estado del canal se reconoce por la cantidad del agua que circula y el nivel que ocupa en ambos bancos de la orilla. </p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">El agua llega a la base de los bancos, sustrato no expuesto</th>
+                <th scope="col">Muy poca agua en el canal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/buen_estado.jpg" alt="sin presa" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/mal_estado.jpg" alt="con presa" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+
+          <p align="justify" class="fs-4">Sección 3: Las perturbaciones antropogénicas</p>
+          <p align="justify" > Estas tienen que ver con la contaminación del agua por efluentes urbanos, desarrollo humano y contaminación.</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin efluentes al río</th>
+                <th scope="col">Descarga directa de residuos al río</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sin_efluentes.jpg" alt="sin efluentes" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/descarga_eflu.jpg" alt="descargas al rio" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify">El desarrollo de infraestructura urbana refiere a la presencia de caminos, carreteras o puentes asociadas al canal del río, incluyendo extracción en este.</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin infraestructura</th>
+                <th scope="col">Carreteras y construcciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sin_construcc.jpg" alt="sin construiir" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/construcciones.jpg" alt="construcciones" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin extracción</th>
+                <th scope="col">Extracción directa en la ribera</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/no_extracc.jpg" alt="sin extracción" 
+                  style="width: 196px; height: 129px;" class="rounded" /> </td>
+                <td><img src="../assets/extracc_directa.jpg" alt="extracción directa" 
+                  style="width: 196px; height: 129px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify">Se examina también la contaminación de residuos sólidos por basura y escombros que son vertidos al lecho del río.</p>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Sin basura, y sin escombros</th>
+                <th scope="col">Presencia difusa de basura y escombros</th>
+                <th scope="col">Presencia abundante de basura y escombros</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td > <img src="../assets/sin_basura.jpg" alt="nada basura" 
+                  style="width: 163px; height: 135px;" class="rounded" /> </td>
+                <td><img src="../assets/poca_basura.jpg" alt="poca basura" 
+                  style="width: 160px; height: 135px;" class="rounded" /></td>
+                  <td><img src="../assets/mucha_basura.jpg" alt="basura y escombros" 
+                  style="width: 160px; height: 135px;" class="rounded" /></td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify" class="fs-3"> &emsp; &emsp; Evaluación</p>
+          <p align="justify" >El protocolo HYQI tiene un total de 120 puntos y cada sección tiene un total de 40 puntos. El puntaje parcial permitirá identificar la sección mejor conservada de las 3 descritas anteriormente. 
+          El puntaje final es el resultado de la suma de los doce parámetros analizados y se verifica su estado de acuerdo al puntaje final y una tabla de colores. Si el valor supera los 85 puntos está en condición de ser considerado como sitio de referencia por su buena calidad hidromorfológica. </p>
+          <MDBTable border="dark">
+            <thead >
+              <tr>
+                <th scope="col">Calidad hidromorfológica</th>
+                <th scope="col">Puntaje</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-primary">
+                <td > Óptima </td>
+                <td> 120-85</td>
+              </tr>
+              <tr class="table-success">
+                <td > Media </td>
+                <td> 84-47</td>
+              </tr>
+              <tr class="table-warning">
+                <td > Mala </td>
+                <td> 46-13</td>
+              </tr>
+              <tr class="table-danger">
+                <td > Pobre </td>
+                <td> &lt;12 </td>
+              </tr>
+            </tbody>
+          </MDBTable>
+
         </MDBTabPane>
 
         <!-- Calculo con microservicio-->
-        <MDBTabPane tabId="calculo-fisicoquim">
+        <MDBTabPane tabId="calculo-hyqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir los parámetros fisicoquímicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
+        <br> <p align="justify"> Aquí puedes introducir los parámetros hidromorfológicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
         <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
             <MDBRow> 
               <MDBCol >
@@ -827,7 +953,7 @@
       const checkForm = (e) => {
         e.target.classList.add('was-validated');
       };
-      const activeTabId = ref('info-fisicoquim');
+      const activeTabId = ref('info-hyqi');
       return {
         activeTabId,
         checkForm,

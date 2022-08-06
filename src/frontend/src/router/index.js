@@ -9,6 +9,7 @@ import CuencaConservacion   from '@/components/CuencaConservacion'
 import CuencaJurisdiccion   from '@/components/CuencaJurisdiccion'
 import ProtocolosInicio     from '@/components/ProtocolosInicio'
 import ProtocoloFisicoQuim  from '@/components/ProtocoloFisicoQuim'
+import ProtocoloHYQI        from '@/components/ProtocoloHYQI'
 
 
 const routes = [
@@ -61,6 +62,11 @@ const routes = [
       path: '/protocolo-fisicoquimica',
       name: 'protocolo-fisicoquimica',
       component: ProtocoloFisicoQuim,  
+    },
+    {
+      path: '/protocolo-hyqi',
+      name: 'protocolo-hyqi',
+      component: ProtocoloHYQI,  
     },
 ]
 const router = createRouter({
