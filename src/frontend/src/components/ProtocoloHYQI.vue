@@ -18,15 +18,15 @@
     <MDBTabs v-model="activeTabId">
       <!-- Tabs navs -->
       <MDBTabNav pills justify tabsClasses="mb-3">
-        <MDBTabItem tabId="info-hyqi" href="info-hyqi">Información acerca del protocolo</MDBTabItem>
-        <MDBTabItem tabId="calculo-hyqi" href="calculo-hyqi">Cálculo  de calidad fisicoquimica </MDBTabItem>
+        <MDBTabItem tabId="info-hyqi" href="info-hyqi"      >Información del protocolo</MDBTabItem>
+        <MDBTabItem tabId="calculo-hyqi" href="calculo-hyqi">Cálculo de índice HYQI</MDBTabItem>
       </MDBTabNav>
       <!-- Tabs navs -->
       <!-- Tabs content -->
       <MDBTabContent>
         <!-- info protocolo-->
         <MDBTabPane tabId="info-hyqi">
-          <p align="justify" > El artículo 3, fracción XLVII, de la Ley de Aguas Nacionales, define como “Ribera o Zona Federal” a las fajas de diez metros de anchura contiguas al cauce de las corrientes o al vaso de los depósitos de propiedad nacional, medidas horizontalmente a partir del nivel de aguas máximas ordinarias. </p>
+          <p align="justify" > El artículo 3, fracción XLVII, de la <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/16_060120.pdf" target="_blank" rel="noopener noreferrer" > Ley de Aguas Nacionales </a>, define como “Ribera o Zona Federal” a las fajas de diez metros de anchura contiguas al cauce de las corrientes o al vaso de los depósitos de propiedad nacional, medidas horizontalmente a partir del nivel de aguas máximas ordinarias. </p>
           <p align="justify">El ecosistema de ribera es un elemento importante en el funcionamiento de un río, sus dimensiones laterales y afluentes, así como muchas de sus dimensiones verticales, están contenidas en su hábitat. Provee servicios a las poblaciones como el suministro de agua, para consumo humano y para el desarrollo de agricultura, ganadería, industria; purificación y transporte de agua, sedimentos y nutrientes; control de inundaciones y sequías; hábitat para las especies; retención de suelo y valores escénicos, culturales y de recreación </p>  
           <h1 class="display-6">Calidad Hidromorfológica</h1>
           <p align = "justify"> El protocolo HYQI (por sus siglas en inglés HYdromorphological Quality Index) incluye datos generales sobre el sitio de muestreo; registro de parámetros físicos y químicos del agua; porcentaje de la composición del sustrato; tipo de bosque del sitio de muestreo, forma de vida predominante. El protocolo contiene doce parámetros hidromorfológicos a evaluar, divididos en tres secciones (las tablas provistas ayudan al reconocimiento de cada uno de los parámetros descritos). </p>
@@ -85,7 +85,6 @@
               </tr>
             </tbody>
           </MDBTable>
-
           <p align="justify" class="fs-4">Sección 2: La hidrología del río</p>
           <p align="justify" >  Se examina la hidrología según la naturalidad del canal, se tienen en cuenta las interrupciones del flujo por la construcción de presas.</p>
           <MDBTable borderless responsive>
@@ -143,7 +142,6 @@
               </tr>
             </tbody>
           </MDBTable>
-
           <p align="justify" class="fs-4">Sección 3: Las perturbaciones antropogénicas</p>
           <p align="justify" > Estas tienen que ver con la contaminación del agua por efluentes urbanos, desarrollo humano y contaminación.</p>
           <MDBTable borderless responsive>
@@ -250,620 +248,633 @@
         <!-- Calculo con microservicio-->
         <MDBTabPane tabId="calculo-hyqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir los parámetros hidromorfológicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
-        <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
-            <MDBRow> 
-              <MDBCol >
-                <p> <b>Parámetros físicos</b> </p>
-              </MDBCol>
-            </MDBRow>
+        <br> <p align="justify"> Aquí puedes introducir los parámetros hidromorfológicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al seleccionar una opción en cada parámetro se despliega más información sobre esta. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos y el índice HYQI calculado, así como una guía en la hoja 2 del archivo para  mayor refrencia en caso de querer hacer cambios en la hoja de cálculo obtenida.</p>
+        <p align="justify"><b> Se recomienda rotar dispositivos móviles en posición horizontal</b> </p>
+        <MDBRow tag="form" class="needs-validation " @submit.prevent="genera" >
           <MDBRow> 
             <MDBCol >
-              <p> Temp. agua <i>(°C) </i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.temperatura1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.temperatura2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.temperatura3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <h5> <b>Cuenca</b> </h5>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p>Conduct. específica <i> (μS)</i> </p>
+              <h6>Cobertura vegetal <br/> (% de suelo)</h6>
+            </MDBCol>   <MDBCol ></MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p>Ribera derecha</p>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.conductividad1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.conductividad2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.conductividad3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip1" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaDer"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label=">70% " name="coberturaDer" value="5" />
+                    </template>
+                    <template #tip> Óptimo</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip2" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaDer" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 70-50%" name="coberturaDer" value="3"  />
+                    </template>
+                    <template #tip> Medio</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip3" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaDer" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 50-30%" name="coberturaDer" value="2" />
+                      </template>
+                    <template #tip> Malo</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip4" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaDer" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label="<30%" name="coberturaDer" value="0" />
+                    </template>
+                    <template #tip> Pobre</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p>Oxígeno disuelto <i> (%)</i> </p>
+              <p>Ribera izquierda</p>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.oxiDisuelto1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip5" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaIzq"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label=">70% " name="coberturaIzq" value="5" />
+                    </template>
+                    <template #tip> Óptimo</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip6" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaIzq" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 70-50%" name="coberturaIzq" value="3"  />
+                    </template>
+                    <template #tip> Medio</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip7" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaIzq" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 50-30%" name="coberturaIzq" value="2" />
+                      </template>
+                    <template #tip> Malo</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip8" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.coberturaIzq" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label="<30%" name="coberturaIzq" value="0" />
+                    </template>
+                    <template #tip> Pobre</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol > <h6>Estabilidad del banco  <br/> (% de erosión)</h6> </MDBCol>
+            <MDBCol >
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip9" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estabilidad"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="<10% " name="estabilidad" value="10" />
+                    </template>
+                    <template #tip> Estable</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip10" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estabilidad" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 10-50%" name="estabilidad" value="7"  />
+                    </template>
+                    <template #tip> Moderadamente estable</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip11" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estabilidad" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 50-80%" name="estabilidad" value="4" />
+                      </template>
+                    <template #tip> Moderadamente inestable</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip12" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estabilidad" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=">80%" name="estabilidad" value="1" />
+                    </template>
+                    <template #tip> Inestable</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow class="overflow-hidden"> 
+            <MDBCol >
+              <h6>Característ. del sustrato <br/> (materiales, vegetación acuática)</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.oxiDisuelto2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip13" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.sustrato"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Óptimo" name="sustrato" value="10" />
+                    </template>
+                    <template #tip> Grava y arena; raíces sumergidas y veget. acuática</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip14" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.sustrato" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" Medio" name="sustrato" value="7"  />
+                    </template>
+                    <template #tip>Arena, arcilla o lodo; algunas raíces sumerg. y veget. acuática</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip15" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.sustrato" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label="Malo" name="sustrato" value="4" />
+                      </template>
+                    <template #tip> Arcilla en superficie, pocas raíces sumerg. y sin vegetación</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip16" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.sustrato" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label="Pobre" name="sustrato" value="1" />
+                    </template>
+                    <template #tip> Capa de arcilla o rocas, sin raíces ni vegetación </template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol>
+              <h6>Desarrollo de ganadería y agricultura <br/> (% uso de suelo)</h6>
+            </MDBCol>   <MDBCol ></MDBCol>
+          </MDBRow>
+          <MDBRow> 
+            <MDBCol >
+              <p>Ribera derecha</p>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.oxiDisuelto3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip17" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaDer"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="0%" name="agriculturaDer" value="5" />
+                    </template>
+                    <template #tip> Sin cultivos o zonas para ganado ni derivaciones para estas actividades</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip18" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaDer" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 20%" name="agriculturaDer" value="3"  />
+                    </template>
+                    <template #tip> Suelo para uso agrícola y ganadero</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip19" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaDer" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 50%" name="agriculturaDer" value="2" />
+                      </template>
+                    <template #tip> Suelo para uso agrícola y ganadero</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip20" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaDer" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=">80%" name="agriculturaDer" value="0" />
+                    </template>
+                    <template #tip> Uso agrícola y ganadero, con derivaciones para uso doméstico o industrial</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p>Oxígeno solubre <i> (mg/l)</i> </p>
+              <p>Ribera izquierda</p>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.oxiSolubre1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.oxiSolubre2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.oxiSolubre3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-              <MDBCol >
-                <p> <b>Parámetros químicos</b> </p>
-              </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
-              <p> pH </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.pH1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.pH2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.pH3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip21" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaIzq"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="0%" name="agriculturaIzq" value="5" />
+                    </template>
+                    <template #tip> Sin cultivos o zonas para ganado ni derivaciones para estas actividades</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip22" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaIzq" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 20%" name="agriculturaIzq" value="3"  />
+                    </template>
+                    <template #tip> Suelo para uso agrícola y ganadero</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip23" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaIzq" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=" 50%" name="agriculturaIzq" value="2" />
+                      </template>
+                    <template #tip> Suelo para uso agrícola y ganadero</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip24" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.agriculturaIzq" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                      label=">80%" name="agriculturaIzq" value="0" />
+                    </template>
+                    <template #tip> Uso agrícola y ganadero, con derivaciones para uso doméstico o industrial</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Fósforo <i> (mg/l)</i> </p>
+              <h5> <b>Hidrología</b> </h5>
+            </MDBCol>
+          </MDBRow> 
+          <MDBRow> 
+            <MDBCol >
+              <h6>Presas <br/> (interrupciones del flujo)</h6> 
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.fosforo1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.fosforo2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.fosforo3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+            <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip25" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.presas"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Ausencia" name="presas" value="10" />
+                      </template>
+                    <template #tip>No hay presas (ni de gavión o de costales) corriente arriba del río</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip26" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.presas" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Presencia" name="presas" value="0"  />
+                    </template>
+                    <template #tip>Hay presas (incluyendo de gavión y de costales) corriente arriba del río</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Nitrito <i> (mg/l)</i> </p>
+              <h6>Regímenes de velocidad/<br/>profundidad (# de regím. presentes)</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.nitrito1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.nitrito2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.nitrito3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip27" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.regimenes"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="4 reg." name="regimenes" value="10" />
+                    </template>
+                    <template #tip> Lento-profundo, lento-somero, rápido-profundo y rápido-somero</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip28" direction="bottom">
+                    <template #reference>
+                       <MDBRadio required v-model="form.regimenes" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                         label="3 reg." name="regimenes" value="7"  />
+                    </template>
+                    <template #tip>Tres regímenes presentes</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip29" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.regimenes" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="2 reg." name="regimenes" value="4" />
+                      </template>
+                    <template #tip>Dos regímenes presentes</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip30" direction="bottom">
+                    <template #reference>
+                     <MDBRadio required v-model="form.regimenes" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                       label="1 rég." name="regimenes" value="1" />
+                    </template>
+                    <template #tip> Un régimen presente, usualmente lento-somero </template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Nitrato <i> (mg/l)</i> </p>
+              <h6>Alteración del canal <br/> (evidencia de canalización)</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.nitrato1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.nitrato2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.nitrato3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip31" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.canal"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Óptimo" name="canal" value="10" />
+                    </template>
+                    <template #tip>Sin canalización</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip32" direction="bottom">
+                    <template #reference>
+                       <MDBRadio required v-model="form.canal" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                         label="Medio" name="canal" value="7"  />
+                    </template>
+                    <template #tip>Evidencia de canalización en el pasado</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip33" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.canal" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Malo " name="canal" value="4" />
+                      </template>
+                    <template #tip>40-80% del escurrimiento canalizado e interrumpido</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip34" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.canal" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                       label="Pobre" name="canal" value="1" />
+                    </template>
+                    <template #tip> Banco de la ribera con cemento o gavión, 80% del escurrimiento canalizado, hábitat alterado o ausente</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Amonio <i> (mg/l)</i> </p>
+              <h6>Estado del canal <br/> (cant. de agua y sustrato expuesto)</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.amonio1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.amonio2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.amonio3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-           <MDBRow> 
-              <MDBCol >
-                <p> <b>Sustrato inorgánico (% de composición en el área muestreada)</b> </p>
-              </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
-              <p> Rocas <i>(>256 mm) </i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.rocas1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.rocas2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.rocas3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip35" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estado"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Óptimo" name="estado" value="10" />
+                    </template>
+                    <template #tip>Agua hasta la base de ambos bancos, sustrato expuesto mínimamente</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip36" direction="bottom">
+                    <template #reference>
+                       <MDBRadio required v-model="form.estado" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                         label="Medio" name="estado" value="7"  />
+                    </template>
+                    <template #tip>El agua llena +75% del canal, o 25% del sustrato está expuesto</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip37" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estado" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Malo " name="estado" value="4" />
+                      </template>
+                    <template #tip>El agua llena 25-75% del canal, o el sustrato está expuesto</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip38" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.estado" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                       label="Pobre" name="estado" value="1" />
+                    </template>
+                    <template #tip> Muy poca agua en el canal</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Canto <i>  (64-256 mm)</i> </p>
+              <h5> <b>Perturbaciones antropogénicas</b> </h5>
+            </MDBCol>
+          </MDBRow> 
+          <MDBRow> 
+            <MDBCol >
+              <h6>Efluentes por uso <br/> doméstico </h6> 
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.canto1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.canto2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.canto3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+            <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip39" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.efluentes"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Ausencia" name="efluentes" value="10" />
+                      </template>
+                    <template #tip>Sin descargas directas de residuos al río </template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip40" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.efluentes" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Presencia" name="efluentes" value="1"  />
+                    </template>
+                    <template #tip>Hay descargas directas de residuos al río </template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Grava  <i> (2-64 mm) </i> </p>
+              <h6>Desarrollo urbano <br/>(% uso de suelo)</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.grava1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.grava2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.grava3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip41" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.urbano"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="0%" name="urbano" value="10" />
+                    </template>
+                    <template #tip>Sin asentamientos humanos, carreteras o deriv. para usos domésticos o industriales.</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip42" direction="bottom">
+                    <template #reference>
+                       <MDBRadio required v-model="form.urbano" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                         label="20%" name="urbano" value="7"  />
+                    </template>
+                    <template #tip>Suelo para uso humano</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip43" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.urbano" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="50% " name="urbano" value="4" />
+                      </template>
+                    <template #tip>Suelo para uso humano</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip44" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.urbano" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                       label=">80%" name="urbano" value="1" />
+                    </template>
+                    <template #tip> Suelo para uso humano</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Arena  <i> (0.06-2 mm)</i> </p>
+              <h6>Desarrollo humano <br/>(actividades alrededor)</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.arena1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.arena2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.arena3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip45" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.humano"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Óptimo" name="humano" value="10" />
+                    </template>
+                    <template #tip>Ausencia de actividades humanas</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip46" direction="bottom">
+                    <template #reference>
+                       <MDBRadio required v-model="form.humano" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                         label="Medio" name="humano" value="7"  />
+                    </template>
+                    <template #tip>Al menos 1 actividad: ganadera, agrícola o piscícola</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip47" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.humano" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="Malo " name="humano" value="4" />
+                      </template>
+                    <template #tip>Al menos 3 actividades: ganadera, agrícola, piscícola,doméstica</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip48" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.humano" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                       label="Pobre" name="humano" value="1" />
+                    </template>
+                    <template #tip>Actividades agrícolas, ganaderas, piscícolas, domésticas</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Arcilla  <i> (0.004 mm)</i> </p>
+              <h6>Contaminación orgánica y <br/> de basura y escombros</h6>
             </MDBCol>
             <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.arcilla1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.arcilla2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.arcilla3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
+              <MDBBtnGroup class="shadow-0">
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip49" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.contaminacion"  :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="<10%" name="contaminacion" value="10" />
+                    </template>
+                    <template #tip>% Presencia de basura o escombros</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol>
+                  <MDBTooltip v-model="tooltip50" direction="bottom">
+                    <template #reference>
+                       <MDBRadio required v-model="form.contaminacion" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                         label="20-40%" name="contaminacion" value="7"  />
+                    </template>
+                    <template #tip> % Presencia de basura o escombros</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip51" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.contaminacion" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                        label="50-80% " name="contaminacion" value="4" />
+                      </template>
+                    <template #tip>% Presencia de basura o escombros</template>
+                  </MDBTooltip>
+                </MDBCol>
+                <MDBCol >
+                  <MDBTooltip v-model="tooltip52" direction="bottom">
+                    <template #reference>
+                      <MDBRadio required v-model="form.contaminacion" :btnCheck="true" :wrap="false" labelClass="btn btn-info"
+                       label=">90%" name="contaminacion" value="1" />
+                    </template>
+                    <template #tip>% Presencia de basura o escombros</template>
+                  </MDBTooltip>
+                </MDBCol>
+              </MDBBtnGroup>
             </MDBCol>
           </MDBRow>
-          <MDBRow> <br> <MDBBtn color="primary" type="submit" >Generar</MDBBtn> </MDBRow>
-          
+          <MDBRow> 
+            <br> <MDBBtn color="primary" type="submit" >Generar</MDBBtn> 
+          </MDBRow>
         </MDBRow>
-
-        <br>
         <!-- Imagen de ejemplo de llenado -->
-        <h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
+         <br><h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
         </MDBTabPane>
-        
       </MDBTabContent>
       <!-- Tabs content -->
     </MDBTabs>
@@ -872,7 +883,7 @@
 
 </template>
 
-<style>
+<style scoped>
   * {
     box-sizing: border-box;
   }
@@ -916,7 +927,6 @@
     margin: 0 auto;
   }
 
-
 </style>
 
 <script>
@@ -930,7 +940,10 @@
            MDBTable,
            MDBBtn,MDBRow,
            MDBCol,
-           MDBInput } from "mdb-vue-ui-kit";
+           MDBRadio, 
+           MDBBtnGroup,
+           MDBTooltip
+          } from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
   import axios from 'axios';
@@ -947,60 +960,137 @@
       MDBBtn,
       MDBRow,
       MDBCol,
-      MDBInput
+      MDBRadio,
+      MDBBtnGroup,
+      MDBTooltip
     },
     setup() {
       const checkForm = (e) => {
         e.target.classList.add('was-validated');
       };
       const activeTabId = ref('info-hyqi');
+      const tooltip1 = ref(false);
+      const tooltip2 = ref(false);
+      const tooltip3 = ref(false);
+      const tooltip4 = ref(false);
+      const tooltip5 = ref(false);
+      const tooltip6 = ref(false);
+      const tooltip7 = ref(false);
+      const tooltip8 = ref(false);
+      const tooltip9 = ref(false);
+      const tooltip10 = ref(false);
+      const tooltip11 = ref(false);
+      const tooltip12 = ref(false);
+      const tooltip13 = ref(false);
+      const tooltip14 = ref(false);
+      const tooltip15 = ref(false);
+      const tooltip16 = ref(false);
+      const tooltip17 = ref(false);
+      const tooltip18 = ref(false);
+      const tooltip19 = ref(false);
+      const tooltip20 = ref(false);
+      const tooltip21 = ref(false);
+      const tooltip22 = ref(false);
+      const tooltip23 = ref(false);
+      const tooltip24 = ref(false);
+      const tooltip25 = ref(false);
+      const tooltip26 = ref(false);
+      const tooltip27 = ref(false);
+      const tooltip28 = ref(false);
+      const tooltip29 = ref(false);
+      const tooltip30 = ref(false);
+      const tooltip31 = ref(false);
+      const tooltip32 = ref(false);
+      const tooltip33 = ref(false);
+      const tooltip34 = ref(false);
+      const tooltip35 = ref(false);
+      const tooltip36 = ref(false);
+      const tooltip37 = ref(false);
+      const tooltip38 = ref(false);
+      const tooltip39 = ref(false);
+      const tooltip40 = ref(false);
+      const tooltip41 = ref(false);
+      const tooltip42 = ref(false);
+      const tooltip43 = ref(false);
+      const tooltip44 = ref(false);
+      const tooltip45 = ref(false);
+      const tooltip46 = ref(false);
+      const tooltip47 = ref(false);
+      const tooltip48 = ref(false);
+      const tooltip49 = ref(false);
+      const tooltip50 = ref(false);
+      const tooltip51 = ref(false);
+      const tooltip52 = ref(false);
       return {
         activeTabId,
         checkForm,
-
+        tooltip1,
+        tooltip2,
+        tooltip3,
+        tooltip4,
+        tooltip5,
+        tooltip6,
+        tooltip7,
+        tooltip8,
+        tooltip9,
+        tooltip10,
+        tooltip11,
+        tooltip12,
+        tooltip13,
+        tooltip14,
+        tooltip15,
+        tooltip16,
+        tooltip17,
+        tooltip18,
+        tooltip19,
+        tooltip20,
+        tooltip21,
+        tooltip22,
+        tooltip23,
+        tooltip24,
+        tooltip25,
+        tooltip26,
+        tooltip27,
+        tooltip28,
+        tooltip29,
+        tooltip30,
+        tooltip31,
+        tooltip32,
+        tooltip33,
+        tooltip34,
+        tooltip35,
+        tooltip36,
+        tooltip37,
+        tooltip38,
+        tooltip39,
+        tooltip40,
+        tooltip41,
+        tooltip42,
+        tooltip43,
+        tooltip44,
+        tooltip45,
+        tooltip46,
+        tooltip47,
+        tooltip48,
+        tooltip49,
+        tooltip50,
+        tooltip51,
+        tooltip52,
         form: {
-          temperatura1: null,
-          temperatura2: null,
-          temperatura3: null,
-          conductividad1: null,
-          conductividad2: null,
-          conductividad3: null,
-          oxiDisuelto1: null,
-          oxiDisuelto2: null,
-          oxiDisuelto3: null,
-          oxiSolubre1: null,
-          oxiSolubre2: null,
-          oxiSolubre3: null,
-          pH1: null,
-          pH2: null,
-          pH3: null,
-          fosforo1: null,
-          fosforo2: null,
-          fosforo3: null,
-          nitrito1: null,
-          nitrito2: null,
-          nitrito3: null,
-          nitrato1: null,
-          nitrato2: null,
-          nitrato3: null,
-          amonio1: null,
-          amonio2: null,
-          amonio3: null,
-          rocas1: null,
-          rocas2: null,
-          rocas3: null,
-          canto1: null,
-          canto2: null,
-          canto3: null,
-          grava1: null,
-          grava2: null,
-          grava3: null,
-          arena1: null,
-          arena2: null,
-          arena3: null,
-          arcilla1: null,
-          arcilla2: null,
-          arcilla3: null
+          coberturaDer: null,
+          coberturaIzq: null,
+          estabilidad: null,
+          sustrato: null,
+          agriculturaDer: null,
+          agriculturaIzq: null,
+          presas: null,
+          regimenes: null,
+          canal: null,
+          estado: null,
+          efluentes: null,
+          urbano: null,
+          humano: null,
+          contaminacion: null
         } 
       };
     },
@@ -1008,14 +1098,10 @@
       navega: function(url) {
         router.push(url).catch(()=>{});
         },
-      // stingify(){
-      //   console.log(JSON.stringify(this.form))
-      // },
       genera(event){
         event.preventDefault()
         console.log("se llega aqui")
-
-        axios.post(`/api/physchem/export/excel`, JSON.stringify(this.form)  ,{ 
+        axios.post(`/api/hyqi/export/excel`, JSON.stringify(this.form)  ,{ 
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -1025,15 +1111,11 @@
               { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" })); //excel file
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'ProtocoloFisicoQuimica.xlsx'); 
+            link.setAttribute('download', 'ProtocoloHYQI.xlsx'); 
             document.body.appendChild(link);
             link.click();
-
           });
-        console.log("tambien aqui :/") 
-        
       }
-    }
-    
+    }  
   };
 </script>
