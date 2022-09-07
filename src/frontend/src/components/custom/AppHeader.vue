@@ -36,7 +36,7 @@
           <MDBDropdownToggle tag="a" class="nav-link shadow-0" split @click="dropdown2 = !dropdown2"/>
           <MDBDropdownMenu>
             <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-fisicoquimica')">Calidad fisicoquímica</MDBDropdownItem>
-            <MDBDropdownItem href="#">Calidad hidromorfológica</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-hyqi')">Calidad hidromorfológica</MDBDropdownItem>
             <MDBDropdownItem href="#">Diatomeas</MDBDropdownItem>
             <MDBDropdownItem href="#">Macroalgas</MDBDropdownItem>
             <MDBDropdownItem href="#">Macroinvertebrados</MDBDropdownItem>
