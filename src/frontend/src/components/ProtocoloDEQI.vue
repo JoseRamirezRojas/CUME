@@ -4,9 +4,9 @@
   <div class="column" style="background-color: #e3f2fd">
     <MDBListGroup  id="inner" >
       <MDBListGroupItem tag="button" @click="navega('/protocolos-info')" action >Protocolos</MDBListGroupItem>
-      <MDBListGroupItem tag="button" action active> Calidad fisicoquímica </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')"> Calidad fisicoquímica </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/protocolo-deqi')" action>DEQI</MDBListGroupItem>
+      <MDBListGroupItem tag="button" action active >DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
@@ -18,114 +18,78 @@
     <MDBTabs v-model="activeTabId">
       <!-- Tabs navs -->
       <MDBTabNav pills justify tabsClasses="mb-3">
-        <MDBTabItem tabId="info-fisicoquim" href="info-fisicoquim">Información acerca del protocolo</MDBTabItem>
-        <MDBTabItem tabId="calculo-fisicoquim" href="calculo-fisicoquim">Cálculo  de calidad fisicoquimica </MDBTabItem>
+        <MDBTabItem tabId="info-deqi" href="info-deqi">Información del protocolo</MDBTabItem>
+        <MDBTabItem tabId="calculo-deqi" href="calculo-deqi">Cálculo  de índice DEQI </MDBTabItem>
       </MDBTabNav>
       <!-- Tabs navs -->
       <!-- Tabs content -->
       <MDBTabContent>
         <!-- info protocolo-->
-        <MDBTabPane tabId="info-fisicoquim">
-          <p align="justify" > De acuerdo con las características fisicoquímicas, los ríos de la cuenca de México se definen como arroyos de montaña de una región subtropical, agua templada entre 5 - 17 °C, moderadamente ácida con pH 5.5 - 8, y poco mineralizada (34.5-175 μS/cm). La mayoría de las sitios evaluados presentan un caudal permanente con variable aforo (0.01-1.5 ㎥/s), que se puede atribuir a la estacionalidad, aunque en la parte media y baja de las cuencas, se debe también a la extracción in situ de estructuras de regulación hídrica. El nitrógeno inorgánico disuelto y el fósforo reactivo soluble coinciden con lugares donde se permiten actividades humanas con usos directos del agua del río. </p>
-          <br>
-          <img src="../assets/fisicoquim_1.jpg" width="237" class="img-fluid  hover-shadow" alt="..." style="float:right;
-          margin-left: 20px" />
-          <h1 class="display-6">Calidad Fisicoquímica</h1>
-          <p align="justify">La temperatura del agua es el parámetro que determina gran parte de los procesos fisicoquímicos y biológicos en el agua. Siempre es importante medirla e intentar determinar su relación con las distintas épocas del año, la altitud del río y las posibles acciones humanas que pueden modificarla (por ejemplo represamientos donde se almacena y calienta el agua). La temperatura del agua siempre se tiene que registrar ya que puede modificarse en unos cuantos centímetros a partir del nacimiento de agua o en zonas donde el río acumula agua y registra más de un metro de profundidad. Esta se registra con termómetros o sensores acoplados a dataloggers. </p>  
-          <br>
-          <p align = "justify"> La velocidad de corriente (V) y el aforo (Q), expresado en ㎥/s, se registran con un medidor de corriente y representa el tiempo que tarda en recorrer un objeto una distancia conocida, es decir:</p>
-          <p align="justify"  class="fs-5"> &emsp; &emsp;<i>V</i> =  <i >d/t </i> , donde <i> d </i> = distancia y <i> t </i> = tiempo </p>
-          <p align="justify">  La estimación del aforo del río permite comparar la cantidad de
-            agua que pasa en el sitio de colecta en distinta época del año. Se recomienda registrar los valores en el mismo punto en cada momento y se usa la siguiente fórmula: </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>Q = A·V</i> </p>
-          <p align="justify"> Para las orillas calculamos un triángulo, y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= B·h/2</i> , donde <i>B</i> = distancia entre la orilla y primera medida del ancho del cauce,
-            y <i>h</i> = primera profundidad a partir de la orilla. </p>
-          <p align="justify"> Para el resto de las áreas se calculan considerando un polígono cuadrangular y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= (B+b)h/2</i> , donde <i>B</i> = 1<sup>a</sup> profundidad,  <i>b</i> = 2<sup>a</sup> profundidad,
-            y <i>h</i> = distancia del intervalo. </p>
-          <p align="justify"> Cada área calculada la multiplicamos por su velocidad de corriente para obtener aforos parciales y obtenemos el aforo total calculando la suma de los aforos parciales.</p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>∑Q<sub>i</sub> = ∑(A<sub>i</sub> · V<sub>i</sub>)</i> </p>
-          <img src="../assets/fig_aforo.png" height="400" width="610" class="img-fluid  hover-shadow" alt="ejemplo aforo" />
-          <br> <br>
-          <p align="justify"> En esta figura tenemos el perfil de un río en el que se calcula el aforo. El área de los extremos es un triángulo y las áreas intemedias son polígonos cuadrangulares.</p>
-          <br>
-          <h1 class="display-6">Nutrientes</h1>
-          <p align="justify"> En general, la cuenca de México presenta una baja concentración de micronutrientes en el nacimiento de los ríos y se puede ir incrementando a lo largo del cauce. </p>
-          <p align="justify"> La concentración de micronutrientes en el agua es el parámetro que puede definir el su uso para el humano. Generalmente la concentración de fósforo y nitrógeno total evidencían la limitación (sistemas oligotróficos) o el excedente por aportes externos al río (sistemas eutróficos). </p>
-          <p align="justify"> Como referencia, en la siguiente tabla se encuentran los límites sugeridos según varias obras para la clasificación trófica de ríos y relación de uso del agua: </p>
-          <MDBTable borderless responsive>
-            <thead class="table-info">
+        <MDBTabPane tabId="info-deqi">
+          <h1 class="display-6">Diatomeas</h1>
+          <p align="justify" > Las diatomeas (<i>Bacillariophyta</i>) son algas unicelulares que se distinguen por poseer una pared celular de sílice (<b>frústulo</b>), la cual se compone de dos mitades que encajan entre sí, llamadas <i>tecas</i>, la superior (<b>epiteca</b>) es mayor y envuelve parcialmente a la inferior (<b>hipoteca</b>).  </p>
+          <img src="../assets/explic_diatomeas.jpg"  class="img-fluid  hover-shadow" alt="diatomea" style=" width: 394px;" /> <br> <br>
+          <p align="justify" > Cada teca está formada por una <b>valva</b> y un <b> cíngulo</b>, la valva presenta una diversidad de perforaciones y ornamentaciones variables entre las especies que proveen rutas para el intercambio de gases y nutrientes, así como para la secreción de productos celulares que les permiten formar colonias, adherirse a sustratos y desplazarse en ellos. </p>
+          <p align="justify" > Las diatomeas se distribuyen en todos los sistemas acuáticos y son productores primarios que responden de manera directa ante los cambios fisicoquímicos, hidromorfológicos y las interacciones biológicas que ocurren en los ríos. Es un grupo biológico que presenta una gran diversidad de especies con distinto grado de sensibilidad o tolerancia ante diferentes condiciones o nivel trófico. </p> 
+          <p align = "justify"> Por su particular ciclo de vida corto, permiten reconocer perturbaciones a corto y largo plazo. En América Latina, donde la etapa de exploración de la diversidad de diatomeas aún sigue en desarrollo, los principales estudios utilizando a las diatomeas como bioindicadores se han desarrollado en Argentina, Brasil, México, Colombia y Ecuador. </p>
+          <h1 class="display-6">Colecta</h1>
+          <p align = "justify"> Para su colecta se debe seleccionar un transecto de 10 metros de longitud del río, preferentemente en zonas bien iluminadas y con flujo laminar del agua, es decir, evitar zonas de rápidos. En el sitio de muestreo se debe favorecer una zona donde predomine sustrato rocoso en el lecho del río. Cabe destacar que no se recomienda su colecta en la temporada de lluvias, pues los ensambles de diatomeas se encuentran bajo perturbación intensa. </p>
+          <img src="../assets/colecta_diatomeas.jpg"  class="img-fluid  hover-shadow" alt="diatomea" style=" width: 329px; " /> <br> <br>
+          <p align="justify"  >Se recomienda colectar preferentemente rocas/cantos de tamaño mediano a grande que se encuentren en la zona de flujo, que difícilmente puedan ser desplazados por la corriente, pero que se puedan retirar del lecho y que el sustrato se encuentre totalmente sumergido. Palpar el sustrato para confirmar que tenga una textura resbalosa provocada por el biofilm de diatomeas, y evitar preferentemente aquel sustrato que tenga por encima una capa de sedimento fino depositado. El sustrato se cepillará con un cepillo de dientes nuevo para evitar la contaminación entre muestras en un área de 20 cm<sup>2</sup> de cada uno (100 cm<sup>2</sup> en total). Se cepillará desde los extremos hacia el centro de la unidad, enjuagando el cepillo vigorosamente en tres ocasiones dentro del frasco con alcohol al 70% previamente etiquetado.  </p>
+          <p align="justify">  La identificación de las diatomeas se realiza con base en las características morfológicas del frústulo, y para ello se requiere oxidar el contenido celular y materia orgánica que las acompaña. Para ello se recomienda el método de oxidación por peróxido de hidrógeno. Para la oxidación se requiere en principio homogeneizar manualmente la muestra colectada en el frasco de plástico y transferir 20 ml de muestra a un vaso de precipitados de 50 ml. </p> 
+          <p align="justify"> La muestra se calienta a 120 °C en una parrilla eléctrica hasta que el volumen se reduzca a 10 ml. Se disminuye la temperatura a 80 °C y se añade 20 ml de peróxido al 30%, teniendo cuidado de que no hierva. </p>
+          <p align="justify"> El volumen de la muestra se reduce de nuevo a 10 ml y volvemos a añadir 20 ml de peróxido de hidrógeno. Este paso se repite hasta que observemos que se ha oxidado la materia orgánica de la muestra (cuando se observan pocas o nulas burbujas).</p>
+          <p align="justify" > Una vez que la muestra se enfría, se añaden 10 gotas de ácido clorhídrico al 10% para eliminar carbonatos, si existieran. Se transfiere la muestra a un tubo de ensayo de 15 ml, y se añade un poco de agua destilada del vaso de precipitados para transferir el remanente de la muestra hasta aforar a 12 ml el tubo de ensayo.</p>
+          <p align="justify"> La muestra se deja sedimentar 24 horas en el tubo de ensayo y se retira el sobrenadante hasta dejar 5 ml de muestra. La muestra se resuspende y afora de nuevo a 12 ml con agua destilada, este se considera el primer enjuague.</p>
+          <p align="justify"> Se deben realizar entre 4 y 6 enjuagues para retirar el peróxido de hidrógeno y ácido clorhídrico de la muestra. En el último enjuague se debe retirar el sobrenadante hasta dejar menos de 2 ml de muestra, entonces se resuspende la muestra y con una pipeta Pasteur se transfiere al tubo Eppendorf hasta aforar a 2 ml. Esta muestra se considera el material oxidado en concentración 1:1, listo para montar en la preparación permanente. </p>
+          <p align="justify"> Para el proceso de montaje en preparaciones permanentes se elige una superficie plana en una zona con poca o nula vibración. Se prepara la resina de inclusión hasta dejarla a punto de miel. Se coloca un cubreobjetos en la superficie elegida y se vierten en este 200 μl de agua destilada con la micropipeta. Se colocan en el centro del cubreobjetos 200 μl de la muestra de diatomeas y se deja evaporar la muestra a temperatura ambiente por 24 horas. Una vez seca se puede retirar el exceso de resina con una navaja, y la guardamos en una caja de preparaciones para ser revisada las veces que sea necesaria.  </p>
+          <h1 class="display-6">Análisis</h1>
+          <img src="../assets/diatom_ilustrativa.png"  class="img-fluid  hover-shadow" alt="diatomea" style="float:right; height: 267px; margin-left: 20px" />
+          <p align="justify" > Las muestras permanentes se revisan en el microscopio óptico con el objetivo de 100X (utilizando aceite de inmersión). Se recomienda realizar previamente un transecto horizontal en la parte media de la preparación para identificar la diversidad de especies presentes en la muestra, utilizando recursos bibliográficos taxonómicos especializados. En particular, la diversidad acuática de los ríos de la cuenca de México se ha descrito por Carmona-Jiménez et al. (2016) y Salinas-Camarillo et al. (2020); o bien, se puede seguir la siguiente bibliografía de apoyo por si llegase a presentar otra especie: <a href="https://www.researchgate.net/publication/318760666_Freshwater_Benthic_Diatoms_of_Central_Europe_Over_800_common_species_used_in_ecological_assessment_English_edition_with_updated_taxonomy_and_added_species" target="_blank" rel="noopener noreferrer" > Cantonati et al. (2017) </a> y  <a href="https://diatoms.org" target="_blank" rel="noopener noreferrer" > diatoms of north america</a>.</p>
+          <p align="justify"> La cuantificación de las diatomeas se realiza observando campos visuales de manera aleatoria sin repetir.   En cada campo visual se toma registro del número de valvas o frústulos de cada especie hasta llegar a contar 500 diatomeas tomando en cuenta que se cuantificarán valvas y frústulos completos por igual; sólo se cuantificarán valvas rotas cuando tengan más del 50% completo; sólo se cuantificarán valvas cuando al menos 50% de su superficie esté dentro del campo visual observado. Al finalizar la cuantificación de los 500 individuos se calcula la abundancia relativa porcentual de las especies.</p>
+          <h1 class="display-6">Evaluación</h1>
+          <p align="justify" >El valor indicador de las especies está basado en el estudio de Salinas-Camarillo et al. (2020), en donde las especies indicadoras de una alta calidad ecológica tienen un valor de 1, aquellas de calidad ecológica buena tienen un valor de 2, las indicadoras de calidad moderada tienen un valor de 3, las de calidad pobre tienen un valor de 4, y las de mala calidad tienen un valor de 5. </p> <br>
+          <h3> <MDBBadge color="info" class="text-wrap" >Los valores indicadores de las especies más abundantes y con mayor distribución se pueden consultar en la hoja de cálculo que puede obtenerse en la pestaña 'CÁLCULO DE ÍNDICE DEQI' llenando el formulario del conteo de especies</MDBBadge> </h3> <br>
+          <p align="justify"> La riqueza de diatomeas en la cuenca de México excede las 500 especies, por lo que aquellas que no se presenten en la tabla suelen tener una baja abundancia o suelen ser raras, por ello se considerarán con un valor indicador (<i>v</i>) de 1, de esta manera el cálculo del índice DEQI no se ve modificado. El índice DEQI se calcula a partir de la suma de los producto del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (debería ser 100%). lo anterior se resume en la siguiente fórmula: </p>
+          <p align="justify" class="fs-5"> &emsp; &emsp; <i>DEQI = <u> &emsp; ∑(v<sub>i</sub> · h<sub>i</sub> ) &emsp;</u>  </i>  <br> &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp; <i>∑h<sub>i</sub> </i> </p>
+          <p align="justify">Los valores del DEQI varían de 1.0 a 5.0, indicando cinco diferentes niveles de calidad ecológica. sitios con un valor de alta calidad ecológica se pueden considerar como sitios de referencia. La buena calidad ecológica es el objetivo a alcanzar para todos los sistemas acuáticos, pues refleja condiciones óptimas en la estructura y función de los ecosistemas.</p>
+          <p align="justify"> Conforme la calidad ecológica de los sitios se deteriora, se alcanza una calidad moderada, reflejando presiones en aspectos fisicoquímicos del agua como incremento de nutrientes, o una alteración en la estructura hidromorfológica del sistema como represamientos o canalizaciones. Los sitios con calidad pobre suelen presentar un incremento en las concentraciones de nutrientes, así como modificaciones en la naturalidad del cauce. Los sitios con mala calidad suelen ser los que presentan condiciones extremas de contaminación dadas por  aumento en las concentraciones de nutrientes así como por el vertido de aguas grises junto con la modificación de la estructura hidromorfológica del cauce.  </p>
+          <MDBTable border="gray" bordered>
+            <thead >
               <tr>
-                <th scope="col">Parámetro (unidades)</th>
-                <th scope="col">Límite oligotrófico-mesotrófico</th>
-                <th scope="col">Límite mesotrófico-eutrófico</th>
+                <th scope="col">Calidad ecológica</th>
+                <th scope="col">DEQI</th>
               </tr>
             </thead>
             <tbody>
-              <tr  class="table-active">
-                <th  scope="row">Doods (1998) &emsp; &emsp;  </th>    <td></td> <td></td>
-                
+              <tr class="table-primary">
+                <td > Alta </td>
+                <td> 1 - 1.5</td>
               </tr>
-              <tr>
-                <td scope="row">Nitrógeno total <i>(μg/l)</i> </td>
-                <td>700</td>
-                <td>1500</td>
+              <tr class="table-success">
+                <td > Buena </td>
+                <td> 1.5 - 2.5</td>
               </tr>
-              <tr>
-                <td scope="row">Fósforo total <i>(μg/l)</i></td>
-                <td>25</td>
-                <td>75</td>
+              <tr class="table-warning">
+                <td > Moderada </td>
+                <td> 2.5 - 3.5</td>
               </tr>
-              <tr class="table-active">
-                <th scope="row">Vida acuática, DOF (2012) &emsp; &emsp; </th>    <td></td> <td></td>
+              <tr class="table-danger">
+                <td > Pobre </td>
+                <td> 3.5 - 4.5 </td>
               </tr>
-              <tr>
-                <td scope="row">Nitrógeno total <i>(mg/l) </i><sub>(promedio mensual) </sub> </td>
-                <td>15</td>
-              </tr>
-              <tr>
-                <td scope="row">Fósforo total <i>(mg/l)</i> <sub>(promedio mensual) </sub></td>
-                <td>5</td>
-              </tr>
-              <tr  class="table-active">
-                <th scope="row">Uso público e infiltración, DOF (1997) &emsp; &emsp; </th>    <td></td> <td></td>
-              </tr>
-              <tr>
-                <td scope="row">Nitrógeno total <i> (mg/l)</i></td>
-                <td>40</td>
-              </tr>
-              <tr>
-                <td scope="row">Fósforo total <i>(mg/l)</i> </td>
-                <td>20</td>
-              </tr>
-              <tr  class="table-active">
-                <th scope="row">Uso y consumo humano, DOF (2012) &emsp; &emsp; </th>    <td></td> <td></td>
-              </tr>
-              <tr>
-                <td scope="row">Nitratos <i> (mg/l)</i>  </td>
-                <td>10</td>
-              </tr>
-              <tr>
-                <td scope="row">Nitritos <i> (mg/l) </i></td>
-                <td>0.05</td>
-              </tr>
-              <tr>
-                <td scope="row">Nitrógeno amoniacal <i>(mg/l) </i></td>
-                <td>0.5</td>
+              <tr class="bg-danger p-2 bg-opacity-25">
+                <td > Mala </td>
+                <td> 4.5 - 5 </td>
               </tr>
             </tbody>
           </MDBTable>
-          <p align="justify">El registro de las formas particuladas e inorgánicas del nitrógeno (nitrito, nitrato y amonio) e inorgánicas del fósforo (ortofosfatos), determinan la predominancia de los grupos algales que lo pueden incorporar por metabolismos particulares. O bien, determinar las fuentes de contaminación de compuestos químicos inorgánicos por aguas residuales urbanas o agroquímicos. </p>
-          <p align="justify"> También se pueden evaluar diversos macronutrientes para determinar la disponibilidad de algunos elementos inorgánicos que requieren algunos organismos para su desarrollo metabólico o estructura celular. Por ejemplo, carbonatos y sulfatos que se requieren para realizar la fotosíntesis y la fabricación de mucílago extracelular. </p>
-
-          
         </MDBTabPane>
 
         <!-- Calculo con microservicio-->
-        <MDBTabPane tabId="calculo-fisicoquim">
+        <MDBTabPane tabId="calculo-deqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir los parámetros fisicoquímicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
+        <br> <p align="justify"> Aquí puedes introducir el conteo de especies de diatomeas analizados y obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los valores indicadores de cada taxa y el índice de calidad ecológica según este bioindicador.</p>
         <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
             <MDBRow> 
               <MDBCol >
@@ -802,10 +766,11 @@
            MDBTabContent,
            MDBTabItem,
            MDBTabPane,
-           MDBTable,
            MDBBtn,MDBRow,
            MDBCol,
-           MDBInput } from "mdb-vue-ui-kit";
+           MDBInput,
+           MDBBadge,
+           MDBTable} from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
   import axios from 'axios';
@@ -818,17 +783,18 @@
       MDBTabContent,
       MDBTabItem,
       MDBTabPane,
-      MDBTable,
       MDBBtn,
       MDBRow,
       MDBCol,
-      MDBInput
+      MDBInput,
+      MDBBadge,
+      MDBTable
     },
     setup() {
       const checkForm = (e) => {
         e.target.classList.add('was-validated');
       };
-      const activeTabId = ref('info-fisicoquim');
+      const activeTabId = ref('info-deqi');
       return {
         activeTabId,
         checkForm,

@@ -10,6 +10,7 @@ import CuencaJurisdiccion   from '@/components/CuencaJurisdiccion'
 import ProtocolosInicio     from '@/components/ProtocolosInicio'
 import ProtocoloFisicoQuim  from '@/components/ProtocoloFisicoQuim'
 import ProtocoloHYQI        from '@/components/ProtocoloHYQI'
+import ProtocoloDEQI        from '@/components/ProtocoloDEQI'
 
 
 const routes = [
@@ -67,6 +68,11 @@ const routes = [
       path: '/protocolo-hyqi',
       name: 'protocolo-hyqi',
       component: ProtocoloHYQI,  
+    },
+    {
+      path: '/protocolo-deqi',
+      name: 'protocolo-deqi',
+      component: ProtocoloDEQI,  
     },
 ]
 const router = createRouter({

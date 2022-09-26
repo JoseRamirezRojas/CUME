@@ -6,15 +6,15 @@
       <MDBListGroupItem tag="button" action active>Protocolos</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')" action > Calidad fisicoquímica </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-deqi')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
     </MDBListGroup>
 
   </div>
   <div class="column-2" style="background-color:#F8F8F8;">
-    <h2>Protocolos de calidad ecológica</h2> <br>
+    <h1 class="display-6">Protocolos de calidad ecológica</h1> <br>
     <img src="../assets/bajo_agua.jpg" width="215" class="img-fluid  hover-shadow" alt="..." 
       style="float:right;
       margin-left: 20px" />
