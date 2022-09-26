@@ -37,7 +37,7 @@
           <MDBDropdownMenu>
             <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-fisicoquimica')">Calidad fisicoquímica</MDBDropdownItem>
             <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-hyqi')">Calidad hidromorfológica</MDBDropdownItem>
-            <MDBDropdownItem href="#">Diatomeas</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-deqi')">Diatomeas</MDBDropdownItem>
             <MDBDropdownItem href="#">Macroalgas</MDBDropdownItem>
             <MDBDropdownItem href="#">Macroinvertebrados</MDBDropdownItem>
           </MDBDropdownMenu>

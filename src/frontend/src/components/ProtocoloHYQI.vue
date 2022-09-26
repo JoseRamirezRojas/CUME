@@ -6,8 +6,8 @@
       <MDBListGroupItem tag="button" @click="navega('/protocolos-info')" action >Protocolos</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')"> Calidad fisicoquímica </MDBListGroupItem>
       <MDBListGroupItem tag="button" action active> HYQI </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-deqi')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
     </MDBListGroup>
@@ -213,7 +213,8 @@
               </tr>
             </tbody>
           </MDBTable>
-          <p align="justify" class="fs-3"> &emsp; &emsp; Evaluación</p>
+          <br> <br>
+          <h1 class="display-6">Evaluación</h1> <br>
           <p align="justify" >El protocolo HYQI tiene un total de 120 puntos y cada sección tiene un total de 40 puntos. El puntaje parcial permitirá identificar la sección mejor conservada de las 3 descritas anteriormente. 
           El puntaje final es el resultado de la suma de los doce parámetros analizados y se verifica su estado de acuerdo al puntaje final y una tabla de colores. Si el valor supera los 85 puntos está en condición de ser considerado como sitio de referencia por su buena calidad hidromorfológica. </p>
           <MDBTable border="dark">
