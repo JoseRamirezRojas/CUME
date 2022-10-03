@@ -49,7 +49,7 @@
           <p align="justify"> La cuantificación de las diatomeas se realiza observando campos visuales de manera aleatoria sin repetir.   En cada campo visual se toma registro del número de valvas o frústulos de cada especie hasta llegar a contar 500 diatomeas tomando en cuenta que se cuantificarán valvas y frústulos completos por igual; sólo se cuantificarán valvas rotas cuando tengan más del 50% completo; sólo se cuantificarán valvas cuando al menos 50% de su superficie esté dentro del campo visual observado. Al finalizar la cuantificación de los 500 individuos se calcula la abundancia relativa porcentual de las especies.</p>
           <h1 class="display-6">Evaluación</h1>
           <p align="justify" >El valor indicador de las especies está basado en el estudio de Salinas-Camarillo et al. (2020), en donde las especies indicadoras de una alta calidad ecológica tienen un valor de 1, aquellas de calidad ecológica buena tienen un valor de 2, las indicadoras de calidad moderada tienen un valor de 3, las de calidad pobre tienen un valor de 4, y las de mala calidad tienen un valor de 5. </p> <br>
-          <h3> <MDBBadge color="info" class="text-wrap" >Los valores indicadores de las especies más abundantes y con mayor distribución se pueden consultar en la hoja de cálculo que puede obtenerse en la pestaña 'CÁLCULO DE ÍNDICE DEQI' llenando el formulario del conteo de especies</MDBBadge> </h3> <br>
+          <h3> <MDBBadge color="info" class="text-wrap" >Los valores indicadores de las especies más abundantes y con mayor distribución se pueden consultar en la hoja de cálculo que puede obtenerse en la pestaña CÁLCULO DE ÍNDICE DEQI llenando el formulario del conteo de especies</MDBBadge> </h3> <br>
           <p align="justify"> La riqueza de diatomeas en la cuenca de México excede las 500 especies, por lo que aquellas que no se presenten en la tabla suelen tener una baja abundancia o suelen ser raras, por ello se considerarán con un valor indicador (<i>v</i>) de 1, de esta manera el cálculo del índice DEQI no se ve modificado. El índice DEQI se calcula a partir de la suma de los producto del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (debería ser 100%). lo anterior se resume en la siguiente fórmula: </p>
           <p align="justify" class="fs-5"> &emsp; &emsp; <i>DEQI = <u> &emsp; ∑(v<sub>i</sub> · h<sub>i</sub> ) &emsp;</u>  </i>  <br> &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp; <i>∑h<sub>i</sub> </i> </p>
           <p align="justify">Los valores del DEQI varían de 1.0 a 5.0, indicando cinco diferentes niveles de calidad ecológica. sitios con un valor de alta calidad ecológica se pueden considerar como sitios de referencia. La buena calidad ecológica es el objetivo a alcanzar para todos los sistemas acuáticos, pues refleja condiciones óptimas en la estructura y función de los ecosistemas.</p>
@@ -89,143 +89,522 @@
         <!-- Calculo con microservicio-->
         <MDBTabPane tabId="calculo-deqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir el conteo de especies de diatomeas analizados y obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los valores indicadores de cada taxa y el índice de calidad ecológica según este bioindicador.</p>
+        <br> <p align="justify"> Aquí puedes introducir el conteo de especies de diatomeas analizadas y obtenidas en la colecta, organizadas por taxa de manera alfabética y con un conteo de 0 por defecto. Hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los valores indicadores de cada taxa y el índice de calidad ecológica de la colecta según este bioindicador. <br> También puedes añadir especies poco abundantes recolectadas a la hoja de cálculo, dándoles un valor indicador <i>v</i> = 1.</p>
         <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
+        <MDBAccordion  borderless stayOpen>
+          <MDBAccordionItem headerTitle="Taxa A - G" collapseId="collapseOne" >
             <MDBRow> 
               <MDBCol >
-                <p> <b>Parámetros físicos</b> </p>
+                <span class="form-text"> <strong> <i> Achnanthes coarctata </i> </strong> </span>
+                <MDBInput 
+                  helper="Abundancia (h)"
+                  v-model="form.achnanthesCoarctata"
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  required
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Achnanthidium exiguum </i> </strong> </span>
+                <MDBInput 
+                  helper="Abundancia (h)"
+                  v-model="form.achnanthidiumExiguum "
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  required
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
               </MDBCol>
             </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Achnanthidium minutissimum </i> </strong> </span>
+                <MDBInput 
+                  helper="Abundancia (h)"
+                  v-model="form.achnanthidiumMinutissimum"
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  required
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Adlafia minuscula </i> </strong> </span>
+                <MDBInput 
+                  helper="Abundancia (h)"
+                  v-model="form.adlafiaMinuscula "
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  required
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Amphora copulata </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.amphoraCopulata" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Amphora pediculus </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.amphoraPediculus " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+            <MDBCol >
+                <span class="form-text"> <strong> <i> Aulacoseira ambigua </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.aulacoseiraAmbigua" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Caloneis bacillum </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.caloneisBacillum" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Caloneis fontinalis </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.caloneisFontinalis" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Caloneis silicula </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.caloneisSilicula" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Caloneis stauroneiformis </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.caloneisStauroneiformis" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cavinula cocconeiformis </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.cavinulaCocconeiformis" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cavinula lapidosa </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.cavinulaLapidosa" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cav. pseudoscutiformis </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.cavinulaPseudoscutiformis" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i>Chamaepinnularia submuscicola </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.chamaepinnulariaSubmuscicola" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cocconeis placentula </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.cocconeisPlacentula" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i>Craticula subminuscula  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.craticulaSubminuscula " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cyclotella menenghiniana </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.cyclotellaMenenghiniana" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cymbella mexicana  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.cymbellaMexicana " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cymbella tumida </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.cymbellaTumida" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Cymbopleura naviculiformis  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.cymbopleuraNaviculiformis " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Decussata placenta </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.decussataPlacenta" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Diploneis smithii  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.diploneisSmithii " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Diploneis subovalis </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.diploneisSubovalis" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Discostella pseudostelligera  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.discostellaPseudostelligera " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Encyonema lange-bertalotii </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.encyonemaLangeBertalotii" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Encyonema minutum  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.encyonemaMinutum " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Encyonema silesiacum </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.encyonemaSilesiacum" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Encyonema ventricosum  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.encyonemaVentricosum " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Epithemia adnata </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.epithemiaAdnata" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Epithemia turgida  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.epithemiaTurgida " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Eunotia arcus </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.eunotiaArcus" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Eunotia bilunaris  </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.eunotiaBilunaris " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Eunotia implicata </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.eunotiaImplicata" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Eunotia minor   </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.eunotiaMinor " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Eunotia paratridentula </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.eunotiaParatridentula" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Fragilaria capucina </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.fragilariaCapucina " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Fragilaria crotonensis </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.fragilariaCrotonensis" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Fragilaria vaucheriae </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.fragilariaVaucheriae " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Frankophila </i> sp.</strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.frankophila" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Frustulia crassinervia </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.frustuliaCrassinervia " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Frustulia vulgaris </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.frustuliaVulgaris" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Geissleria acceptata </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.geissleriaAcceptata " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema acuminatum </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.gomphonemaAcuminatum" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema capitatum </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.gomphonemaCapitatum " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema clavatum </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.gomphonemaClavatum" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema commutatum </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.gomphonemaCommutatum " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema gracile </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.gomphonemaGracile" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema lagenula </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.gomphonemaLagenula " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema minutum </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.gomphonemaMinutum" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+            <MDBRow>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema parvulum </i> </strong> </span>
+                <MDBInput helper="Abundancia (h)" v-model="form.gomphonemaParvulum " required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input"
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+              <MDBCol >
+                <span class="form-text"> <strong> <i> Gomphonema tenuissimum </i> </strong> </span>
+                <MDBInput  helper="Abundancia (h)" v-model="form.gomphonemaTenuissimum" required
+                  invalidFeedback="Llena este campo"
+                  validationEvent="input" 
+                  pattern="^[0-9]*[0-9]+$"
+                  title="Introducir un número natural"  />
+              </MDBCol>
+            </MDBRow>
+          </MDBAccordionItem>
+          <MDBAccordionItem
+            headerTitle="Taxa H - N"
+            collapseId="collapseTwo"
+          >
+            <strong>This is the second item's accordion body.</strong>
+            It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These
+            classes control the overall appearance, as well as the showing
+            and hiding via CSS transitions. You can modify any of this with
+            custom CSS or overriding our default variables. It's also worth
+            noting that just about any HTML can go within the
+            MDBAccordionItem, though the transition does limit
+            overflow.
+          </MDBAccordionItem>
+          <MDBAccordionItem
+            headerTitle="Accordion Item #3"
+            collapseId="collapseThree"
+          >
+            <strong>This is the third item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These
+            classes control the overall appearance, as well as the showing
+            and hiding via CSS transitions. You can modify any of this with
+            custom CSS or overriding our default variables. It's also worth
+            noting that just about any HTML can go within the
+            MDBAccordionItem, though the transition does limit
+            overflow.
+          </MDBAccordionItem>
+        </MDBAccordion>
+          
           <MDBRow> 
-            <MDBCol >
-              <p> Temp. agua <i>(°C) </i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.temperatura1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.temperatura2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.temperatura3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
-              <p>Conduct. específica <i> (μS)</i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.conductividad1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.conductividad2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.conductividad3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
-              <p>Oxígeno disuelto <i> (%)</i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.oxiDisuelto1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.oxiDisuelto2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.oxiDisuelto3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
-              <p>Oxígeno solubre <i> (mg/l)</i> </p>
-            </MDBCol>
             <MDBCol >
               <MDBInput
                 label="test 1"
@@ -238,31 +617,7 @@
                 title="Favor de introducir un número"
               />
             </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.oxiSolubre2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.oxiSolubre3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
+
           </MDBRow>
           <MDBRow> 
               <MDBCol >
@@ -355,48 +710,6 @@
           </MDBRow>
           <MDBRow> 
             <MDBCol >
-              <p> Nitrito <i> (mg/l)</i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.nitrito1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.nitrito2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.nitrito3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
               <p> Nitrato <i> (mg/l)</i> </p>
             </MDBCol>
             <MDBCol >
@@ -411,48 +724,8 @@
                 title="Favor de introducir un número"
               />
             </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.nitrato2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.nitrato3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
           </MDBRow>
           <MDBRow> 
-            <MDBCol >
-              <p> Amonio <i> (mg/l)</i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.amonio1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
             <MDBCol >
               <MDBInput
                 label="test 2"
@@ -516,48 +789,6 @@
               <MDBInput
                 label="test 3"
                 v-model="form.rocas3"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              >
-              </MDBInput>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow> 
-            <MDBCol >
-              <p> Canto <i>  (64-256 mm)</i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.canto1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 2"
-                v-model="form.canto2"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 3"
-                v-model="form.canto3"
                 invalidFeedback="Llena este campo"
                 validFeedback="¡Listo!"
                 validationEvent="input"
@@ -653,21 +884,6 @@
             </MDBCol>
           </MDBRow>
           <MDBRow> 
-            <MDBCol >
-              <p> Arcilla  <i> (0.004 mm)</i> </p>
-            </MDBCol>
-            <MDBCol >
-              <MDBInput
-                label="test 1"
-                v-model="form.arcilla1"
-                invalidFeedback="Llena este campo"
-                validFeedback="¡Listo!"
-                validationEvent="input"
-                required
-                pattern="^[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)$"
-                title="Favor de introducir un número"
-              />
-            </MDBCol>
             <MDBCol >
               <MDBInput
                 label="test 2"
@@ -770,7 +986,9 @@
            MDBCol,
            MDBInput,
            MDBBadge,
-           MDBTable} from "mdb-vue-ui-kit";
+           MDBTable,
+           MDBAccordion, 
+           MDBAccordionItem} from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
   import axios from 'axios';
@@ -788,7 +1006,9 @@
       MDBCol,
       MDBInput,
       MDBBadge,
-      MDBTable
+      MDBTable,
+      MDBAccordion,
+      MDBAccordionItem
     },
     setup() {
       const checkForm = (e) => {
@@ -798,50 +1018,59 @@
       return {
         activeTabId,
         checkForm,
-
         form: {
-          temperatura1: null,
-          temperatura2: null,
-          temperatura3: null,
-          conductividad1: null,
-          conductividad2: null,
-          conductividad3: null,
-          oxiDisuelto1: null,
-          oxiDisuelto2: null,
-          oxiDisuelto3: null,
-          oxiSolubre1: null,
-          oxiSolubre2: null,
-          oxiSolubre3: null,
-          pH1: null,
-          pH2: null,
-          pH3: null,
-          fosforo1: null,
-          fosforo2: null,
-          fosforo3: null,
-          nitrito1: null,
-          nitrito2: null,
-          nitrito3: null,
-          nitrato1: null,
-          nitrato2: null,
-          nitrato3: null,
-          amonio1: null,
-          amonio2: null,
-          amonio3: null,
-          rocas1: null,
-          rocas2: null,
-          rocas3: null,
-          canto1: null,
-          canto2: null,
-          canto3: null,
-          grava1: null,
-          grava2: null,
-          grava3: null,
-          arena1: null,
-          arena2: null,
-          arena3: null,
-          arcilla1: null,
-          arcilla2: null,
-          arcilla3: null
+          achnanthesCoarctata: 0,
+          achnanthidiumExiguum: 0,
+          achnanthidiumMinutissimum: 0,
+          adlafiaMinuscula: 0,
+          amphoraCopulata: 0,
+          amphoraPediculus: 0,
+          aulacoseiraAmbigua: 0,
+          caloneisBacillum: 0,
+          caloneisFontinalis: 0,
+          caloneisSilicula : 0,
+          caloneisStauroneiformis: 0,
+          cavinulaCocconeiformis: 0,
+          cavinulaLapidosa: 0,
+          cavinulaPseudoscutiformis: 0,
+          chamaepinnulariaSubmuscicola: 0,
+          cocconeisPlacentula: 0,
+          craticulaSubminuscula: 0,
+          cyclotellaMenenghiniana: 0,
+          cymbellaMexicana: 0,
+          cymbellaTumida: 0,
+          cymbopleuraNaviculiformis: 0,
+          decussataPlacenta: 0,
+          diploneisSmithii: 0,
+          diploneisSubovalis: 0,
+          discostellaPseudostelligera: 0,
+          encyonemaLangeBertalotii: 0,
+          encyonemaMinutum: 0,
+          encyonemaSilesiacum: 0,
+          encyonemaVentricosum: 0,
+          epithemiaAdnata: 0,
+          epithemiaTurgida: 0,
+          eunotiaArcus: 0,
+          eunotiaBilunaris: 0,
+          eunotiaImplicata: 0,
+          eunotiaMinor: 0,
+          eunotiaParatridentula: 0,
+          fragilariaCapucina: 0,
+          fragilariaCrotonensis: 0,
+          fragilariaVaucheriae: 0,
+          frankophila: 0,
+          frustuliaCrassinervia: 0,
+          frustuliaVulgaris: 0,
+          geissleriaAcceptata: 0,
+          gomphonemaAcuminatum: 0,
+          gomphonemaCapitatum: 0,
+          gomphonemaClavatum: 0,
+          gomphonemaCommutatum: 0,
+          gomphonemaGracile: 0,
+          gomphonemaLagenula: 0,
+          gomphonemaMinutum: 0,
+          gomphonemaParvulum: 0,
+          gomphonemaTenuissimum: 0,
         } 
       };
     },
