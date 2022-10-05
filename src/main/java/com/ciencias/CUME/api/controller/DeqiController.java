@@ -10,25 +10,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ciencias.CUME.api.model.HyqiData;
-import com.ciencias.CUME.api.service.HyqiService;
+import com.ciencias.CUME.api.model.DeqiData;
+import com.ciencias.CUME.api.service.DeqiService;
  
 @RestController
-@RequestMapping("/api/hyqi")
-public class HyqiController {
+@RequestMapping("/api/deqi")
+public class DeqiController {
  
 
     @PostMapping(path="/export/excel")
-    public void exportToExcel(HttpServletResponse response, @RequestBody HyqiData data) throws IOException {
+    public void exportToExcel(HttpServletResponse response, @RequestBody DeqiData data) throws IOException {
         
         response.reset();
-        System.out.println(data.getCoberturaDer());
+        System.out.println(data.getAchnanthesCoarctata());
 
         response.setHeader("Content-Type","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         response.setHeader("Content-Disposition", "attachment; filename=CalidadHidromorfologica.xlsx");
 
-        HyqiService hyqiService = new HyqiService(data);
-        hyqiService.export(response);
+        DeqiService deqiService = new DeqiService(data);
+        deqiService.export(response);
           
     } 
 } 
