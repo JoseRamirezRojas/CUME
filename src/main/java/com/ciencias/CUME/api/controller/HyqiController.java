@@ -27,8 +27,8 @@ public class HyqiController {
         response.setHeader("Content-Type","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         response.setHeader("Content-Disposition", "attachment; filename=CalidadHidromorfologica.xlsx");
 
-        HyqiService physChemService = new HyqiService(data);
-        physChemService.export(response);
+        HyqiService hyqiService = new HyqiService(data);
+        hyqiService.export(response);
           
     } 
 } 
