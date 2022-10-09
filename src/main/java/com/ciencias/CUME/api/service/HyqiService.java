@@ -569,6 +569,13 @@ public class HyqiService {
         row = sheet2.createRow(32);
         writeScoreRef(row, style);
 
+        CellRangeAddress region = CellRangeAddress.valueOf("A2:E33");
+        BorderStyle borderStyle = BorderStyle.MEDIUM ;
+        RegionUtil.setBorderBottom(borderStyle, region, sheet2);
+        RegionUtil.setBorderTop(borderStyle, region, sheet2);
+        RegionUtil.setBorderLeft(borderStyle, region, sheet2);
+        RegionUtil.setBorderRight(borderStyle, region, sheet2);
+
         sheet2.autoSizeColumn(0);
         sheet2.autoSizeColumn(1);
         sheet2.autoSizeColumn(2);

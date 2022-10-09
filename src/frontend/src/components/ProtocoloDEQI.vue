@@ -92,7 +92,7 @@
         <br> <p align="justify"> Aquí puedes introducir el conteo de especies de diatomeas analizadas y obtenidas en la colecta, organizadas por taxa de manera alfabética y con un conteo de 0 por defecto. Se sugiere un conteo alrededor de 500 valvas para realizar el cálculo de claidad ecológica. <br> Hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los valores indicadores de cada taxa y el índice de calidad ecológica de la colecta según este bioindicador. <br> También puedes añadir especies poco abundantes recolectadas a la hoja de cálculo, dándoles un valor indicador <i>v</i> = 1.</p>
         <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
         <MDBAccordion  borderless stayOpen>
-          <MDBAccordionItem headerTitle="Taxa A - G" collapseId="collapseOne" >
+          <MDBAccordionItem headerTitle="Taxa A - G" collapseId="collapseOne" @click.prevent.self>
             <MDBRow> 
               <MDBCol >
                 <span class="form-text"> <strong> <i> Achnanthes coarctata </i> </strong> </span>
@@ -575,7 +575,7 @@
             </MDBRow>
             <br>
           </MDBAccordionItem>
-          <MDBAccordionItem headerTitle="Taxa H - N" collapseId="collapseTwo" >
+          <MDBAccordionItem type="button" headerTitle="Taxa H - N" collapseId="collapseTwo" @click.prevent.self>
             <MDBRow>
               <MDBCol >
                 <span class="form-text"> <strong> <i> Halamphora montana </i> </strong> </span>
@@ -983,8 +983,8 @@
               </MDBCol>
               <MDBCol > </MDBCol>
             </MDBRow>
-          </MDBAccordionItem>
-          <MDBAccordionItem headerTitle="Taxa O - U" collapseId="collapseThree" >
+          </MDBAccordionItem >
+          <MDBAccordionItem headerTitle="Taxa O - U" collapseId="collapseThree" @click.prevent.self >
             <MDBRow>
               <MDBCol >
                 <span class="form-text"> <strong> <i> Odontidium mesodon </i> </strong> </span>
