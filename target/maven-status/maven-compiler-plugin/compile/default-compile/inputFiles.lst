@@ -1,10 +1,13 @@
-/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/model/PhysChemData.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/model/DeqiData.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/HyqiController.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/model/HyqiData.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/DeqiController.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/UserExcelExporter.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/MessageController.java
-/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/CumeApplication.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/PhysChemService.java
-/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/HyqiService.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/PhysChemController.java
 /home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/controller/UserController.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/model/PhysChemData.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/CumeApplication.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/HyqiService.java
+/home/pepe/Documentos/CUME/src/main/java/com/ciencias/CUME/api/service/DeqiService.java
