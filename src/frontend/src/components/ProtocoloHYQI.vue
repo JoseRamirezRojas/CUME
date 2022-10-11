@@ -4,10 +4,10 @@
   <div class="column" style="background-color: #e3f2fd">
     <MDBListGroup  id="inner" >
       <MDBListGroupItem tag="button" @click="navega('/protocolos-info')" action >Protocolos</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')"> Calidad fisicoquímica </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')" action> Calidad fisicoquímica </MDBListGroupItem>
       <MDBListGroupItem tag="button" action active> HYQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-deqi')" action>DEQI</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-meqi')" action>MEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
     </MDBListGroup>

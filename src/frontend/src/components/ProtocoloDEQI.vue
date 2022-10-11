@@ -4,10 +4,10 @@
   <div class="column" style="background-color: #e3f2fd">
     <MDBListGroup  id="inner" >
       <MDBListGroupItem tag="button" @click="navega('/protocolos-info')" action >Protocolos</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')"> Calidad fisicoquímica </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-fisicoquimica')" action> Calidad fisicoquímica </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" action active >DEQI</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-vegetacion')" action>MEQI</MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-meqi')" action>MEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
     </MDBListGroup>
@@ -45,14 +45,14 @@
           <p align="justify"> Para el proceso de montaje en preparaciones permanentes se elige una superficie plana en una zona con poca o nula vibración. Se prepara la resina de inclusión hasta dejarla a punto de miel. Se coloca un cubreobjetos en la superficie elegida y se vierten en este 200 μl de agua destilada con la micropipeta. Se colocan en el centro del cubreobjetos 200 μl de la muestra de diatomeas y se deja evaporar la muestra a temperatura ambiente por 24 horas. Una vez seca se puede retirar el exceso de resina con una navaja, y la guardamos en una caja de preparaciones para ser revisada las veces que sea necesaria.  </p>
           <h1 class="display-6">Análisis</h1>
           <img src="../assets/diatom_ilustrativa.png"  class="img-fluid  hover-shadow" alt="diatomea" style="float:right; height: 267px; margin-left: 20px" />
-          <p align="justify" > Las muestras permanentes se revisan en el microscopio óptico con el objetivo de 100X (utilizando aceite de inmersión). Se recomienda realizar previamente un transecto horizontal en la parte media de la preparación para identificar la diversidad de especies presentes en la muestra, utilizando recursos bibliográficos taxonómicos especializados. En particular, la diversidad acuática de los ríos de la cuenca de México se ha descrito por Carmona-Jiménez et al. (2016) y Salinas-Camarillo et al. (2020); o bien, se puede seguir la siguiente bibliografía de apoyo por si llegase a presentar otra especie: <a href="https://www.researchgate.net/publication/318760666_Freshwater_Benthic_Diatoms_of_Central_Europe_Over_800_common_species_used_in_ecological_assessment_English_edition_with_updated_taxonomy_and_added_species" target="_blank" rel="noopener noreferrer" > Cantonati et al. (2017) </a> y  <a href="https://diatoms.org" target="_blank" rel="noopener noreferrer" > diatoms of north america</a>.</p>
+          <p align="justify" > Las muestras permanentes se revisan en el microscopio óptico con el objetivo de 100X (utilizando aceite de inmersión). Se recomienda realizar previamente un transecto horizontal en la parte media de la preparación para identificar la diversidad de especies presentes en la muestra, utilizando recursos bibliográficos taxonómicos especializados. En particular, la diversidad acuática de los ríos de la cuenca de México se ha descrito por <a href="https://www.revistascca.unam.mx/rica/index.php/rica/article/view/RICA.2016.32.02.01/46574" target="_blank" rel="noopener noreferrer" > Carmona-Jiménez <i>et al.</i> (2016) </a>  y <a href="https://link.springer.com/article/10.1007/s11356-020-11604-3" target="_blank" rel="noopener noreferrer" > Salinas-Camarillo <i>et al.</i> (2020)</a>; o bien, se puede seguir la siguiente bibliografía de apoyo por si llegase a presentar otra especie: <a href="https://www.researchgate.net/publication/318760666_Freshwater_Benthic_Diatoms_of_Central_Europe_Over_800_common_species_used_in_ecological_assessment_English_edition_with_updated_taxonomy_and_added_species" target="_blank" rel="noopener noreferrer" > Cantonati <i>et al.</i> (2017) </a> y  <a href="https://diatoms.org" target="_blank" rel="noopener noreferrer" > diatoms of north america</a>.</p>
           <p align="justify"> La cuantificación de las diatomeas se realiza observando campos visuales de manera aleatoria sin repetir.   En cada campo visual se toma registro del número de valvas o frústulos de cada especie hasta llegar a contar 500 diatomeas tomando en cuenta que se cuantificarán valvas y frústulos completos por igual; sólo se cuantificarán valvas rotas cuando tengan más del 50% completo; sólo se cuantificarán valvas cuando al menos 50% de su superficie esté dentro del campo visual observado. Al finalizar la cuantificación de los 500 individuos se calcula la abundancia relativa porcentual de las especies.</p>
           <h1 class="display-6">Evaluación</h1>
           <p align="justify" >El valor indicador de las especies está basado en el estudio de Salinas-Camarillo et al. (2020), en donde las especies indicadoras de una alta calidad ecológica tienen un valor de 1, aquellas de calidad ecológica buena tienen un valor de 2, las indicadoras de calidad moderada tienen un valor de 3, las de calidad pobre tienen un valor de 4, y las de mala calidad tienen un valor de 5. </p> <br>
           <h3> <MDBBadge color="info" class="text-wrap" >Los valores indicadores de las especies más abundantes y con mayor distribución se pueden consultar en la hoja de cálculo que puede obtenerse en la pestaña CÁLCULO DE ÍNDICE DEQI llenando el formulario del conteo de especies</MDBBadge> </h3> <br>
-          <p align="justify"> La riqueza de diatomeas en la cuenca de México excede las 500 especies, por lo que aquellas que no se presenten en la tabla suelen tener una baja abundancia o suelen ser raras, por ello se considerarán con un valor indicador (<i>v</i>) de 1, de esta manera el cálculo del índice DEQI no se ve modificado. El índice DEQI se calcula a partir de la suma de los producto del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (debería ser 100%). lo anterior se resume en la siguiente fórmula: </p>
+          <p align="justify"> La riqueza de diatomeas en la cuenca de México excede las 500 especies, por lo que aquellas que no se presenten en la tabla suelen tener una baja abundancia o suelen ser raras, por ello se considerarán con un valor indicador (<i>v</i>) de 1, de esta manera el cálculo del índice DEQI no se ve modificado. El índice DEQI se calcula a partir de la suma de los productos del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (debería ser 100%). lo anterior se resume en la siguiente fórmula: </p>
           <p align="justify" class="fs-5"> &emsp; &emsp; <i>DEQI = <u> &emsp; ∑(v<sub>i</sub> · h<sub>i</sub> ) &emsp;</u>  </i>  <br> &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp; <i>∑h<sub>i</sub> </i> </p>
-          <p align="justify">Los valores del DEQI varían de 1.0 a 5.0, indicando cinco diferentes niveles de calidad ecológica. sitios con un valor de alta calidad ecológica se pueden considerar como sitios de referencia. La buena calidad ecológica es el objetivo a alcanzar para todos los sistemas acuáticos, pues refleja condiciones óptimas en la estructura y función de los ecosistemas.</p>
+          <p align="justify">Los valores del DEQI varían de 1.0 a 5.0, indicando cinco diferentes niveles de calidad ecológica. Sitios con un valor de alta calidad ecológica se pueden considerar como sitios de referencia. La buena calidad ecológica es el objetivo a alcanzar para todos los sistemas acuáticos, pues refleja condiciones óptimas en la estructura y función de los ecosistemas.</p>
           <p align="justify"> Conforme la calidad ecológica de los sitios se deteriora, se alcanza una calidad moderada, reflejando presiones en aspectos fisicoquímicos del agua como incremento de nutrientes, o una alteración en la estructura hidromorfológica del sistema como represamientos o canalizaciones. Los sitios con calidad pobre suelen presentar un incremento en las concentraciones de nutrientes, así como modificaciones en la naturalidad del cauce. Los sitios con mala calidad suelen ser los que presentan condiciones extremas de contaminación dadas por  aumento en las concentraciones de nutrientes así como por el vertido de aguas grises junto con la modificación de la estructura hidromorfológica del cauce.  </p>
           <MDBTable border="gray" bordered>
             <thead >
@@ -68,19 +68,19 @@
               </tr>
               <tr class="table-success">
                 <td > Buena </td>
-                <td> 1.5 - 2.5</td>
+                <td> 1.51 - 2.5</td>
               </tr>
               <tr class="table-warning">
                 <td > Moderada </td>
-                <td> 2.5 - 3.5</td>
+                <td> 2.51 - 3.5</td>
               </tr>
               <tr class="table-danger">
                 <td > Pobre </td>
-                <td> 3.5 - 4.5 </td>
+                <td> 3.51 - 4.5 </td>
               </tr>
               <tr class="bg-danger p-2 bg-opacity-25">
                 <td > Mala </td>
-                <td> 4.5 - 5 </td>
+                <td> 4.51 - 5 </td>
               </tr>
             </tbody>
           </MDBTable>

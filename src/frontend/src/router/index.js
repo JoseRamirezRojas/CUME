@@ -11,6 +11,7 @@ import ProtocolosInicio     from '@/components/ProtocolosInicio'
 import ProtocoloFisicoQuim  from '@/components/ProtocoloFisicoQuim'
 import ProtocoloHYQI        from '@/components/ProtocoloHYQI'
 import ProtocoloDEQI        from '@/components/ProtocoloDEQI'
+import ProtocoloMEQI        from '@/components/ProtocoloMEQI'
 
 
 const routes = [
@@ -73,6 +74,11 @@ const routes = [
       path: '/protocolo-deqi',
       name: 'protocolo-deqi',
       component: ProtocoloDEQI,  
+    },
+    {
+      path: '/protocolo-meqi',
+      name: 'protocolo-meqi',
+      component: ProtocoloMEQI,  
     },
 ]
 const router = createRouter({
