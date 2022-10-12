@@ -28,24 +28,24 @@
         <MDBTabPane tabId="info-fisicoquim">
           <p align="justify" > De acuerdo con las características fisicoquímicas, los ríos de la cuenca de México se definen como arroyos de montaña de una región subtropical, agua templada entre 5 - 17 °C, moderadamente ácida con pH 5.5 - 8, y poco mineralizada (34.5-175 μS/cm). La mayoría de las sitios evaluados presentan un caudal permanente con variable aforo (0.01-1.5 ㎥/s), que se puede atribuir a la estacionalidad, aunque en la parte media y baja de las cuencas, se debe también a la extracción in situ de estructuras de regulación hídrica. El nitrógeno inorgánico disuelto y el fósforo reactivo soluble coinciden con lugares donde se permiten actividades humanas con usos directos del agua del río. </p>
           <br>
+          <h1 class="display-6">Calidad Fisicoquímica</h1>
           <img src="../assets/fisicoquim_1.jpg" width="237" class="img-fluid  hover-shadow" alt="..." style="float:right;
           margin-left: 20px" />
-          <h1 class="display-6">Calidad Fisicoquímica</h1>
           <p align="justify">La temperatura del agua es el parámetro que determina gran parte de los procesos fisicoquímicos y biológicos en el agua. Siempre es importante medirla e intentar determinar su relación con las distintas épocas del año, la altitud del río y las posibles acciones humanas que pueden modificarla (por ejemplo represamientos donde se almacena y calienta el agua). La temperatura del agua siempre se tiene que registrar ya que puede modificarse en unos cuantos centímetros a partir del nacimiento de agua o en zonas donde el río acumula agua y registra más de un metro de profundidad. Esta se registra con termómetros o sensores acoplados a dataloggers. </p>  
           <br>
           <p align = "justify"> La velocidad de corriente (V) y el aforo (Q), expresado en ㎥/s, se registran con un medidor de corriente y representa el tiempo que tarda en recorrer un objeto una distancia conocida, es decir:</p>
-          <p align="justify"  class="fs-5"> &emsp; &emsp;<i>V</i> =  <i >d/t </i> , donde <i> d </i> = distancia y <i> t </i> = tiempo </p>
+          <vue-mathjax :formula="formulaTime" /> donde <i> d </i> = distancia y <i> t </i> = tiempo.
           <p align="justify">  La estimación del aforo del río permite comparar la cantidad de
-            agua que pasa en el sitio de colecta en distinta época del año. Se recomienda registrar los valores en el mismo punto en cada momento y se usa la siguiente fórmula: </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>Q = A·V</i> </p>
-          <p align="justify"> Para las orillas calculamos un triángulo, y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= B·h/2</i> , donde <i>B</i> = distancia entre la orilla y primera medida del ancho del cauce,
-            y <i>h</i> = primera profundidad a partir de la orilla. </p>
-          <p align="justify"> Para el resto de las áreas se calculan considerando un polígono cuadrangular y entonces </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>A= (B+b)h/2</i> , donde <i>B</i> = 1<sup>a</sup> profundidad,  <i>b</i> = 2<sup>a</sup> profundidad,
-            y <i>h</i> = distancia del intervalo. </p>
+            agua que pasa en el sitio de colecta en distinta época del año (m<sup>2</sup>). Se recomienda registrar los valores en el mismo punto en cada momento y se usa la siguiente fórmula: </p>
+          <vue-mathjax :formula="formulaCapacity" /> Con <i> A</i> = área y <i>V</i> = velocidad.
+          <br> <br> <p align="justify"> Para las orillas calculamos un triángulo, y entonces </p>
+          <vue-mathjax :formula="formulaTriangle" /> donde <i>B</i> = distancia entre la orilla y primera medida del ancho del cauce,
+            y <i>h</i> = la primera profundidad a partir de la orilla. 
+           <br> <br> <p align="justify"> Para el resto de las áreas se calculan considerando un polígono cuadrangular y entonces </p>
+           <vue-mathjax :formula="formulaTrapeze" /> donde <i>B</i> = 1<sup>a</sup> profundidad,  <i>b</i> = 2<sup>a</sup> profundidad,
+            y <i>h</i> = distancia del intervalo. 
           <p align="justify"> Cada área calculada la multiplicamos por su velocidad de corriente para obtener aforos parciales y obtenemos el aforo total calculando la suma de los aforos parciales.</p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>∑Q<sub>i</sub> = ∑(A<sub>i</sub> · V<sub>i</sub>)</i> </p>
+          <vue-mathjax :formula="formulaTotalCapacity" /> <br>
           <img src="../assets/fig_aforo.png" height="400" width="610" class="img-fluid  hover-shadow" alt="ejemplo aforo" />
           <br> <br>
           <p align="justify"> En esta figura tenemos el perfil de un río en el que se calcula el aforo. El área de los extremos es un triángulo y las áreas intemedias son polígonos cuadrangulares.</p>
@@ -832,7 +832,11 @@
       return {
         activeTabId,
         checkForm,
-
+        formulaTime: "$$V = \\frac {d}{t}$$",
+        formulaCapacity: "$$Q = A \\cdot V$$",
+        formulaTriangle: "$$A = \\frac {B \\cdot h}{2}$$",
+        formulaTrapeze: "$$A= \\frac{(B+b)h}{2}$$",
+        formulaTotalCapacity: "$$\\sum Q_i = \\sum (A_i \\cdot V_i)$$",
         form: {
           temperatura1: null,
           temperatura2: null,

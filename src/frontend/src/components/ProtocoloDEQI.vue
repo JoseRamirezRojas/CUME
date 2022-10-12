@@ -50,8 +50,8 @@
           <h1 class="display-6">Evaluación</h1>
           <p align="justify" >El valor indicador de las especies está basado en el estudio de Salinas-Camarillo et al. (2020), en donde las especies indicadoras de una alta calidad ecológica tienen un valor de 1, aquellas de calidad ecológica buena tienen un valor de 2, las indicadoras de calidad moderada tienen un valor de 3, las de calidad pobre tienen un valor de 4, y las de mala calidad tienen un valor de 5. </p> <br>
           <h3> <MDBBadge color="info" class="text-wrap" >Los valores indicadores de las especies más abundantes y con mayor distribución se pueden consultar en la hoja de cálculo que puede obtenerse en la pestaña CÁLCULO DE ÍNDICE DEQI llenando el formulario del conteo de especies</MDBBadge> </h3> <br>
-          <p align="justify"> La riqueza de diatomeas en la cuenca de México excede las 500 especies, por lo que aquellas que no se presenten en la tabla suelen tener una baja abundancia o suelen ser raras, por ello se considerarán con un valor indicador (<i>v</i>) de 1, de esta manera el cálculo del índice DEQI no se ve modificado. El índice DEQI se calcula a partir de la suma de los productos del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (debería ser 100%). lo anterior se resume en la siguiente fórmula: </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>DEQI = <u> &emsp; ∑(v<sub>i</sub> · h<sub>i</sub> ) &emsp;</u>  </i>  <br> &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp; <i>∑h<sub>i</sub> </i> </p>
+          <p align="justify"> La riqueza de diatomeas en la cuenca de México excede las 500 especies, por lo que aquellas que no se presenten en la tabla suelen tener una baja abundancia o suelen ser raras, por ello se considerarán con un valor indicador (<i>v</i>) de 1, de esta manera el cálculo del índice DEQI no se ve modificado. El índice DEQI se calcula a partir de la suma de los productos del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (100%). Lo anterior se resume en la siguiente fórmula: </p>
+          <vue-mathjax :formula="formula" />  <br>
           <p align="justify">Los valores del DEQI varían de 1.0 a 5.0, indicando cinco diferentes niveles de calidad ecológica. Sitios con un valor de alta calidad ecológica se pueden considerar como sitios de referencia. La buena calidad ecológica es el objetivo a alcanzar para todos los sistemas acuáticos, pues refleja condiciones óptimas en la estructura y función de los ecosistemas.</p>
           <p align="justify"> Conforme la calidad ecológica de los sitios se deteriora, se alcanza una calidad moderada, reflejando presiones en aspectos fisicoquímicos del agua como incremento de nutrientes, o una alteración en la estructura hidromorfológica del sistema como represamientos o canalizaciones. Los sitios con calidad pobre suelen presentar un incremento en las concentraciones de nutrientes, así como modificaciones en la naturalidad del cauce. Los sitios con mala calidad suelen ser los que presentan condiciones extremas de contaminación dadas por  aumento en las concentraciones de nutrientes así como por el vertido de aguas grises junto con la modificación de la estructura hidromorfológica del cauce.  </p>
           <MDBTable border="gray" bordered>
@@ -1525,7 +1525,7 @@
 
 </template>
 
-<style>
+<style scoped>
   * {
     box-sizing: border-box;
   }
@@ -1616,6 +1616,7 @@
       return {
         activeTabId,
         checkForm,
+        formula: '$$DEQI = \\frac{ \\sum(v_i \\cdot h_i )} { \\sum h_i} $$',
         form: {
           achnanthesCoarctata: 0,
           achnanthidiumExiguum: 0,

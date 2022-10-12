@@ -47,9 +47,112 @@
           <h1 class="display-6">Evaluación</h1>
           <p align="justify" > La cobertura porcentual de cada especie se transcribe en el formato que se ubica en la pestaña de CÁLCULO DE ÍNDICE MEQI. Y esta cobertura porcentual (<i>h</i>) para cada especie por transecto es igual al promedio de su cobertura en los 10 cuadrantes definidos para recolectar.</p> 
           <p align="justify"> Por la naturaleza de la colecta para este protocolo, si el sitio se colecta en más de una ocasión, se numera en orden progresivo y así, el valor de la calidad ecológica se calcula obteniendo el promedio de todas las fechas de colecta. </p> 
-          <h3> <MDBBadge color="info" class="text-wrap" >Los valores indicadores de las 20 especies de macroalgas reportadas para la cuenca fueron determinadas por <a href="http://revista.ib.unam.mx/index.php/bio/article/view/3899" target="_blank" rel="noopener noreferrer"> Carmona-Jiménez <i>et al.</i> (2021) </a> y se pueden consultar  en la pestaña CÁLCULO DE ÍNDICE MEQI o bien en la hoja de cálculo que puede descargarse ahí mismo.</MDBBadge> </h3> <br>
-          <p align="justify"> Los valores indicadores (<i>v</i>) y la abundancia de las macroalgas (<i>h</i>) reportados en la muestra nos llevan a calcular el índice MEQI que ,de manera análoga a DEQI, se calcula a partir de la suma de los productos del valor indicador (<i>v)</i> de cada especie por su abundancia relativa porcentual (<i>h</i>), dividida entre la suma de la abundancia relativa porcentual de todas las especies (el 100%). lo anterior se resume en la siguiente fórmula: </p>
-          <p align="justify" class="fs-5"> &emsp; &emsp; <i>MEQI = <u> &emsp; ∑(v<sub>i</sub> · h<sub>i</sub> ) &emsp;</u>  </i>  <br> &emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp; <i>∑h<sub>i</sub> </i> </p>
+          <p align="justify"> Los valores indicadores de las 20 especies de macroalgas reportadas para la cuenca fueron determinadas por <a href="http://revista.ib.unam.mx/index.php/bio/article/view/3899" target="_blank" rel="noopener noreferrer"> Carmona-Jiménez <i>et al.</i> ( 2021 ) </a> y se pueden consultar en esta tabla, o en la hoja de cálculo que puede descargarse en la pestaña CÁLCULO DE ÍNDICE MEQI </p> <br>
+          <MDBTable borderless responsive>
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Taxa</th>
+                <th scope="col">Valor indicador (<i>v </i>)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  class="table-active">
+                <th  scope="row">Cyanobacteria &emsp; &emsp; &emsp; &emsp;  </th>    <td></td> 
+                
+              </tr>
+              <tr>
+                <td scope="row"><i>Calothrix</i> sp. </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Coleodesmium wrangelii</i> Borzí ex Geitler</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Nostoc aff. parmelioides</i> Kützing ex Bornet &amp; Flahault</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Phormidium aff. autumnale</i> Gomont</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Placoma regularis</i> Brody &amp; Ingerfeld</td>
+                <td>1</td>
+              </tr>
+              <tr class="table-active">
+                <th scope="row">Rhodophyta &emsp; &emsp; &emsp; &emsp; </th>   <td></td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Batrachospermum gelatinosum</i> (Linnaeus) De Candolle</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Paralamanea mexicana</i> (Kützing) Vis &amp; Sheath</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i> 'Chantrasia' </i> stage of undefined Rhodophyta</td>
+                <td>5</td>
+              </tr>
+              <tr class="table-active">
+                <th scope="row">Chlorophyta &emsp; &emsp; &emsp; &emsp; </th>  <td></td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Ulothrix</i> sp. </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Prasiola mexicana</i> Agardh </td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Spirogyra</i> sp. </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Mougeotia</i> sp. </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Cladophora</i> sp. </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Rhizoclonium</i> sp. </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Oedogonium</i> sp. </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Tetraspora gelatinosa</i> (Vaucher) Desvaux </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Draparnaldia mutabilis</i> (Roth) Bory </td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Stigeoclonium tenue</i> (Agardh) Kützing </td>
+                <td>5</td>
+              </tr>
+              <tr  class="table-active">
+                <th scope="row">Xantophyta &emsp; &emsp; &emsp; &emsp; </th>    <td></td> 
+              </tr>
+              <tr>
+                <td scope="row"><i>Tribonema</i> sp. </td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td scope="row"><i>Vaucheria bursata</i> (Müller) Agardh </td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </MDBTable>
+          <p align="justify"> Los valores indicadores (<i>v</i>) y la abundancia de las macroalgas (<i>h</i>) reportados en la muestra nos llevan a calcular el índice MEQI que ,de manera análoga a DEQI, se calcula a partir de la suma de los productos del valor indicador (<i>v)</i> de cada especie por su abundancia según el conteo de cada taxón (<i>h</i>), dividida entre la suma de la abundancia de todos los taxones. Lo anterior se resume en la siguiente fórmula: </p>
+          <vue-mathjax :formula="formula" />  <br>
           <p align="justify">El valor del MEQI se clasifica en cinco categorías definidas como: alta, buena, moderada, pobre y mala, donde los valores inferiores a 1.5 pueden considerarse sitios de referencia de buena calidad ecológica y los valores superiores a 3.51 indican sitios perturbados. Las clases intermedias indican especies que pueden tolerar mayores concentraciones de nutrientes o alteraciones en la calidad hidromorfológica.</p>
           <p align="justify"> Las especies que se repiten en distintos ensambles pueden tolerar perturbaciones en la calidad hidromorfológica y/o fisicoquímica del agua. En estos casos, es importante determinar su preferencia en cada clase con base en su abundancia. </p>
           <MDBTable border="gray" bordered>
@@ -85,16 +188,26 @@
         </MDBTabPane>
 
         <!-- Calculo con microservicio-->
-        <MDBTabPane tabId="calculo-hyqi">
+        <MDBTabPane tabId="calculo-meqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir los parámetros hidromorfológicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al seleccionar una opción en cada parámetro se despliega más información sobre esta. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos y el índice HYQI calculado, así como una guía en la hoja 2 del archivo para  mayor refrencia en caso de querer hacer cambios en la hoja de cálculo obtenida.</p>
-        <p align="justify"><b> Se recomienda rotar dispositivos móviles en posición horizontal</b> </p>
-        
-        <MDBRow> 
-            <br> <MDBBtn color="primary" type="submit" >Generar</MDBBtn> 
+        <br> <p align="justify"> Aquí puedes descargar el formato para el cálculo del índice y llenarlo con datos del conteo de macroalgas obtenidos en la colecta, debajo del botón encontrarás información de cómo llenar adecuadamente el formato. </p>
+        <MDBRow tag="form" @submit="genera"> 
+          <MDBBtn color="primary" type="submit" download>
+            Generar 
+          </MDBBtn> 
         </MDBRow>
         <!-- Imagen de ejemplo de llenado -->
-         <br><h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
+          <br><h1 class="display-6">Hoja 1: MEQI</h1>
+          <img src="../assets/hoja1MEQI.png"  class="img-fluid  hover-shadow" alt="hoja1" style=" height: 252px; " /> <br> <br>
+          <p align="justify">En esta hoja, hasta arriba, deberás anotar los datos del proyecto para el que se realiza este cálculo, los nombres de los autores y revisor, y las fechas de colecta y revisión. </p>
+          <p align="justify">Posteriormente según los datos analizados de la colecta deberás anotar el conteo de cada taxón reconocido, según su acomodo por filas.</p>
+          <p align="justify">Cada columna, a partir de la columna D, representa un sitio de colecta involuvrado en el proyecto. De inicio se incluyen 20 sitios numerados pero se puede cambiar el nombre de las columnas por el nombre del sitio recolectada, o bien, asignar claves a cada sitio y ponerlas en dichas columnas. </p>
+          <p align="justify">Al momento de escribir los datos de conteo de especies la hoja hará los cálculos actualizados al momento, desplegando el valor MEQI de cada sitio en la parte de abajo de la hoja en las filas 30-32 con los códigos de colores descritos en la pestaña INFORMACIÓN DEL PROTOCOLO en este sitio; y hasta arriba de la hoja se mostrará también el valor MEQI promedio de todos los sitios que tengan datos introducidos, así cómo informar la calidad ecológica en la que se pueden clasificar los sitos introducidos.  </p>
+          <br><h1 class="display-6">Hoja 2: Ficha de colecta</h1>
+          <img src="../assets/hoja2MEQI.png"  class="img-fluid  hover-shadow" alt="hoja2" style=" height: 252px; " /> <br> <br>
+          <p align="justify">En esta hoja, se encuentra disponible la ficha para llevar control de la colecta, esta en teoría deberá llevarse en formato impreso durante la colecta, para luego capturar la información correspondiente de manera digital.</p>
+          <p align="justify">Se tendrá que cambiar el valor de "Cuadrante X" por el número de cuadrante que se esté colectando en el sitio, y tras anotar los valores de velocidad de corriente e irradiancia el promedio de estos se calculará en la ficha digital.</p>
+          
         </MDBTabPane>
       </MDBTabContent>
       <!-- Tabs content -->
@@ -150,7 +263,7 @@
 
 </style>
 
-<script>
+<script >
   import { MDBListGroup, 
            MDBListGroupItem,
            MDBTabs,
@@ -161,11 +274,9 @@
            MDBTable,
            MDBBtn,
            MDBRow,
-           MDBBadge
           } from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
-  import axios from 'axios';
   export default {
     components: {
       MDBListGroup,
@@ -178,7 +289,6 @@
       MDBTable,
       MDBBtn,
       MDBRow,
-      MDBBadge,
     },
     setup() {
       const checkForm = (e) => {
@@ -189,47 +299,21 @@
       return {
         activeTabId,
         checkForm,
-        
-        form: {
-          coberturaDer: null,
-          coberturaIzq: null,
-          estabilidad: null,
-          sustrato: null,
-          agriculturaDer: null,
-          agriculturaIzq: null,
-          presas: null,
-          regimenes: null,
-          canal: null,
-          estado: null,
-          efluentes: null,
-          urbano: null,
-          humano: null,
-          contaminacion: null
-        } 
+        formula: '$$MEQI = \\frac{ \\sum(v_i \\cdot h_i )} { \\sum h_i} $$',
       };
     },
     methods: {
       navega: function(url) {
         router.push(url).catch(()=>{});
         },
-      genera(event){
-        event.preventDefault()
+      genera(){
         console.log("se llega aqui")
-        axios.post(`/api/hyqi/export/excel`, JSON.stringify(this.form)  ,{ 
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-          }, responseType : 'blob'}
-          ).then(resp => {
-            const url = window.URL.createObjectURL(new Blob([resp.data],
-              { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" })); //excel file
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', 'ProtocoloHYQI.xlsx'); 
-            document.body.appendChild(link);
-            link.click();
-          });
+        const link = document.createElement('a');
+        link.href = './assets/files/ProtocoloMEQI.xlsx';
+        link.setAttribute('download', 'ProtocoloMEQI.xlsx'); 
+        document.body.appendChild(link);
+        link.click();
       }
-    }  
+    } 
   };
 </script>
