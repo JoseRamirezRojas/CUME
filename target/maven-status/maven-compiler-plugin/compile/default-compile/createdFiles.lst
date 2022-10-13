@@ -1,10 +1,14 @@
 com/ciencias/CUME/api/model/PhysChemData.class
+com/ciencias/CUME/api/model/DeqiData.class
 com/ciencias/CUME/CumeApplication.class
 com/ciencias/CUME/api/service/HyqiService.class
 com/ciencias/CUME/api/service/PhysChemService.class
 com/ciencias/CUME/api/controller/MessageController.class
 com/ciencias/CUME/api/controller/PhysChemController.class
+com/ciencias/CUME/api/service/DeqiService.class
 com/ciencias/CUME/api/service/UserExcelExporter.class
+com/ciencias/CUME/api/service/DeqiService$1.class
 com/ciencias/CUME/api/controller/HyqiController.class
 com/ciencias/CUME/api/controller/UserController.class
 com/ciencias/CUME/api/model/HyqiData.class
+com/ciencias/CUME/api/controller/DeqiController.class
