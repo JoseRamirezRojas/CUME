@@ -8,7 +8,7 @@
       <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" action active >DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-meqi')" action>MEQI</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-bemeqi')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
     </MDBListGroup>
 
@@ -1616,7 +1616,7 @@
       return {
         activeTabId,
         checkForm,
-        formula: '$$DEQI = \\frac{ \\sum(v_i \\cdot h_i )} { \\sum h_i} $$',
+        formula: '$$DEQI = \\frac{ \\sum_{i=1}^n(v_i \\cdot h_i )} { \\sum_{i=1}^n h_i} $$',
         form: {
           achnanthesCoarctata: 0,
           achnanthidiumExiguum: 0,

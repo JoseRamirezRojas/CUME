@@ -12,6 +12,7 @@ import ProtocoloFisicoQuim  from '@/components/ProtocoloFisicoQuim'
 import ProtocoloHYQI        from '@/components/ProtocoloHYQI'
 import ProtocoloDEQI        from '@/components/ProtocoloDEQI'
 import ProtocoloMEQI        from '@/components/ProtocoloMEQI'
+import ProtocoloBEMEQI      from '@/components/ProtocoloBEMEQI'
 
 
 const routes = [
@@ -79,6 +80,11 @@ const routes = [
       path: '/protocolo-meqi',
       name: 'protocolo-meqi',
       component: ProtocoloMEQI,  
+    },
+    {
+      path: '/protocolo-bemeqi',
+      name: 'protocolo-bemeqi',
+      component: ProtocoloBEMEQI,  
     },
 ]
 const router = createRouter({
