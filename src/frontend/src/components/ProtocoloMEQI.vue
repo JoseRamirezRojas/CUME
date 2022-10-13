@@ -8,7 +8,7 @@
       <MDBListGroupItem tag="button" @click="navega('/protocolo-hyqi')" action > HYQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/protocolo-deqi')" action>DEQI</MDBListGroupItem>
       <MDBListGroupItem tag="button" action active>MEQI</MDBListGroupItem>
-      <MDBListGroupItem tag="button" @click="navega('/cuenca-conservacion')" action>BEMEQI </MDBListGroupItem>
+      <MDBListGroupItem tag="button" @click="navega('/protocolo-bemeqi')" action>BEMEQI </MDBListGroupItem>
       <MDBListGroupItem tag="button" @click="navega('/cuenca-jurisdiccion')" action >Material de trabajo</MDBListGroupItem>
     </MDBListGroup>
 
@@ -151,6 +151,7 @@
               </tr>
             </tbody>
           </MDBTable>
+          <br> <br> 
           <p align="justify"> Los valores indicadores (<i>v</i>) y la abundancia de las macroalgas (<i>h</i>) reportados en la muestra nos llevan a calcular el índice MEQI que ,de manera análoga a DEQI, se calcula a partir de la suma de los productos del valor indicador (<i>v)</i> de cada especie por su abundancia según el conteo de cada taxón (<i>h</i>), dividida entre la suma de la abundancia de todos los taxones. Lo anterior se resume en la siguiente fórmula: </p>
           <vue-mathjax :formula="formula" />  <br>
           <p align="justify">El valor del MEQI se clasifica en cinco categorías definidas como: alta, buena, moderada, pobre y mala, donde los valores inferiores a 1.5 pueden considerarse sitios de referencia de buena calidad ecológica y los valores superiores a 3.51 indican sitios perturbados. Las clases intermedias indican especies que pueden tolerar mayores concentraciones de nutrientes o alteraciones en la calidad hidromorfológica.</p>
@@ -190,7 +191,7 @@
         <!-- Calculo con microservicio-->
         <MDBTabPane tabId="calculo-meqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes descargar el formato para el cálculo del índice y llenarlo con datos del conteo de macroalgas obtenidos en la colecta, debajo del botón encontrarás información de cómo llenar adecuadamente el formato. </p>
+        <br> <p align="justify"> Aquí puedes descargar el formato para el cálculo del índice y llenarlo con datos del conteo de macroinvertebrados obtenidos en la colecta, debajo del botón encontrarás información de cómo llenar adecuadamente el formato. </p>
         <MDBRow tag="form" @submit="genera"> 
           <MDBBtn color="primary" type="submit" download>
             Generar 
@@ -201,8 +202,8 @@
           <img src="../assets/hoja1MEQI.png"  class="img-fluid  hover-shadow" alt="hoja1" style=" height: 252px; " /> <br> <br>
           <p align="justify">En esta hoja, hasta arriba, deberás anotar los datos del proyecto para el que se realiza este cálculo, los nombres de los autores y revisor, y las fechas de colecta y revisión. </p>
           <p align="justify">Posteriormente según los datos analizados de la colecta deberás anotar el conteo de cada taxón reconocido, según su acomodo por filas.</p>
-          <p align="justify">Cada columna, a partir de la columna D, representa un sitio de colecta involuvrado en el proyecto. De inicio se incluyen 20 sitios numerados pero se puede cambiar el nombre de las columnas por el nombre del sitio recolectada, o bien, asignar claves a cada sitio y ponerlas en dichas columnas. </p>
-          <p align="justify">Al momento de escribir los datos de conteo de especies la hoja hará los cálculos actualizados al momento, desplegando el valor MEQI de cada sitio en la parte de abajo de la hoja en las filas 30-32 con los códigos de colores descritos en la pestaña INFORMACIÓN DEL PROTOCOLO en este sitio; y hasta arriba de la hoja se mostrará también el valor MEQI promedio de todos los sitios que tengan datos introducidos, así cómo informar la calidad ecológica en la que se pueden clasificar los sitos introducidos.  </p>
+          <p align="justify">Cada columna, a partir de la columna D, representa un sitio de colecta involucrado en el proyecto. De inicio se incluyen 20 sitios numerados pero se puede cambiar el nombre de las columnas por el nombre del sitio recolectada, o bien, asignar claves a cada sitio y ponerlas en dichas columnas. </p>
+          <p align="justify">Al momento de escribir los datos de conteo de especies la hoja hará los cálculos actualizados al momento, desplegando el valor MEQI de cada sitio en la parte de abajo de la hoja en las filas 30-32 con los códigos de colores descritos en la pestaña INFORMACIÓN DEL PROTOCOLO en este sitio; y hasta arriba de la hoja se mostrará también el valor MEQI promedio de todos los sitios que tengan datos introducidos, así como informar la calidad ecológica en la que se pueden clasificar los sitos introducidos.  </p>
           <br><h1 class="display-6">Hoja 2: Ficha de colecta</h1>
           <img src="../assets/hoja2MEQI.png"  class="img-fluid  hover-shadow" alt="hoja2" style=" height: 252px; " /> <br> <br>
           <p align="justify">En esta hoja, se encuentra disponible la ficha para llevar control de la colecta, esta en teoría deberá llevarse en formato impreso durante la colecta, para luego capturar la información correspondiente de manera digital.</p>
@@ -291,15 +292,11 @@
       MDBRow,
     },
     setup() {
-      const checkForm = (e) => {
-        e.target.classList.add('was-validated');
-      };
       const activeTabId = ref('info-meqi');
      
       return {
         activeTabId,
-        checkForm,
-        formula: '$$MEQI = \\frac{ \\sum(v_i \\cdot h_i )} { \\sum h_i} $$',
+        formula: '$$MEQI = \\frac{ \\sum_{i=1}^n(v_i \\cdot h_i )} { \\sum_{i=1}^n h_i} $$',
       };
     },
     methods: {
