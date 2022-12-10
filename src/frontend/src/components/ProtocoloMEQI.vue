@@ -192,11 +192,11 @@
         <MDBTabPane tabId="calculo-meqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
         <br> <p align="justify"> Aquí puedes descargar el formato para el cálculo del índice y llenarlo con datos del conteo de macroinvertebrados obtenidos en la colecta, debajo del botón encontrarás información de cómo llenar adecuadamente el formato. </p>
-        <MDBRow tag="form" @submit="genera"> 
-          <MDBBtn color="primary" type="submit" download>
+        <div class="d-grid gap-2">
+          <MDBBtn color="primary" download @click="genera">
             Generar 
           </MDBBtn> 
-        </MDBRow>
+        </div>
         <!-- Imagen de ejemplo de llenado -->
           <br><h1 class="display-6">Hoja 1: MEQI</h1>
           <img src="../assets/hoja1MEQI.png"  class="img-fluid  hover-shadow" alt="hoja1" style=" height: 252px; " /> <br> <br>
@@ -274,7 +274,6 @@
            MDBTabPane,
            MDBTable,
            MDBBtn,
-           MDBRow,
           } from "mdb-vue-ui-kit";
   import { ref } from 'vue';
   import router from '../router'
@@ -289,7 +288,6 @@
       MDBTabPane,
       MDBTable,
       MDBBtn,
-      MDBRow,
     },
     setup() {
       const activeTabId = ref('info-meqi');
@@ -310,7 +308,8 @@
         link.setAttribute('download', 'ProtocoloMEQI.xlsx'); 
         document.body.appendChild(link);
         link.click();
-      }
+      },
+      
     } 
   };
 </script>
