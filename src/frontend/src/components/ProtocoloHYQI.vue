@@ -249,7 +249,7 @@
         <!-- Calculo con microservicio-->
         <MDBTabPane tabId="calculo-hyqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir los parámetros hidromorfológicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al seleccionar una opción en cada parámetro se despliega más información sobre esta. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos y el índice HYQI calculado, así como una guía en la hoja 2 del archivo para  mayor referencia en caso de querer hacer cambios en la hoja de cálculo obtenida.</p>
+        <br> <p align="justify"> Aquí puedes introducir los parámetros hidromorfológicos del agua obtenidos en la colecta. Al seleccionar una opción en cada parámetro se despliega más información sobre esta. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos y el índice HYQI calculado, así como una guía en la hoja 2 del archivo para  mayor referencia en caso de querer hacer cambios en la hoja de cálculo obtenida.</p>
         <p align="justify"><b> Se recomienda rotar dispositivos móviles en posición horizontal</b> </p>
         <MDBRow tag="form" class="needs-validation " @submit.prevent="genera" >
           <MDBRow> 
@@ -874,7 +874,6 @@
           </MDBRow>
         </MDBRow>
         <!-- Imagen de ejemplo de llenado -->
-         <br><h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
         </MDBTabPane>
       </MDBTabContent>
       <!-- Tabs content -->

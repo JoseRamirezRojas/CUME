@@ -39,7 +39,7 @@
             <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-hyqi')">Calidad hidromorfológica</MDBDropdownItem>
             <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-deqi')">Diatomeas</MDBDropdownItem>
             <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-meqi')">Macroalgas</MDBDropdownItem>
-            <MDBDropdownItem href="#">Macroinvertebrados</MDBDropdownItem>
+            <MDBDropdownItem href="#" @click="dropdown2 = !dropdown2, navega('/protocolo-bemeqi')">Macroinvertebrados</MDBDropdownItem>
           </MDBDropdownMenu>
         </MDBDropdown>
 

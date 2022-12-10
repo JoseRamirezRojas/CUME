@@ -89,7 +89,7 @@
         <!-- Calculo con microservicio-->
         <MDBTabPane tabId="calculo-deqi">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir el conteo de especies de diatomeas analizadas y obtenidas en la colecta, organizadas por taxa de manera alfabética y con un conteo de 0 por defecto. Se sugiere un conteo alrededor de 500 valvas para realizar el cálculo de claidad ecológica. <br> Hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los valores indicadores de cada taxa y el índice de calidad ecológica de la colecta según este bioindicador. <br> También puedes añadir especies poco abundantes recolectadas a la hoja de cálculo, dándoles un valor indicador <i>v</i> = 1.</p>
+        <br> <p align="justify"> Aquí puedes introducir el conteo de especies de diatomeas analizadas y obtenidas en la colecta, organizadas por taxa de manera alfabética y con un conteo de 0 por defecto. Se sugiere un conteo alrededor de 500 valvas para realizar el cálculo de claidad ecológica. <br> Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los valores indicadores de cada taxa y el índice de calidad ecológica de la colecta según este bioindicador. <br> También puedes añadir especies poco abundantes recolectadas a la hoja de cálculo, dándoles un valor indicador <i>v</i> = 1.</p>
         <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
         <MDBAccordion  borderless stayOpen>
           <MDBAccordionItem headerTitle="Taxa A - G" collapseId="collapseOne" @click.prevent.self>
@@ -1514,7 +1514,6 @@
 
         <br>
         <!-- Imagen de ejemplo de llenado -->
-        <h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
         </MDBTabPane>
         
       </MDBTabContent>

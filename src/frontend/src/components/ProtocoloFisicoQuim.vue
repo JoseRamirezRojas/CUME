@@ -125,7 +125,7 @@
         <!-- Calculo con microservicio-->
         <MDBTabPane tabId="calculo-fisicoquim">
         <h1 class="display-5">Cálculo del protocolo</h1>
-        <br> <p align="justify"> Aquí puedes introducir los parámetros fisicoquímicos del agua obtenidos en la colecta, hasta abajo encontrarás un ejemplo del llenado de esta ficha. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
+        <br> <p align="justify"> Aquí puedes introducir los parámetros fisicoquímicos del agua obtenidos en la colecta. Al dar clic en Generar se descargará un archivo editable de Excel donde puedes visualizar los datos, y se incluyen celdas listas para calcular también el aforo.</p>
         <MDBRow tag="form" class="needs-validation" @submit.prevent="genera" >
             <MDBRow> 
               <MDBCol >
@@ -736,7 +736,6 @@
 
         <br>
         <!-- Imagen de ejemplo de llenado -->
-        <h1 class="display-6">Cómo llenar la ficha del protocolo </h1>
         </MDBTabPane>
         
       </MDBTabContent>
