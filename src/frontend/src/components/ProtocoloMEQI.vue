@@ -304,7 +304,7 @@
       genera(){
         console.log("se llega aqui")
         const link = document.createElement('a');
-        link.href = './assets/files/ProtocoloMEQI.xlsx';
+        link.href = 'https://cumex-bucket.s3.us-east-2.amazonaws.com/ProtocoloMEQI.xlsx';
         link.setAttribute('download', 'ProtocoloMEQI.xlsx'); 
         document.body.appendChild(link);
         link.click();

@@ -381,7 +381,7 @@
       genera(){
         console.log("se llega aqui")
         const link = document.createElement('a');
-        link.href = './assets/files/ProtocoloBEMEQI.xlsx';
+        link.href = 'https://cumex-bucket.s3.us-east-2.amazonaws.com/ProtocoloBEMEQI.xlsx';
         link.setAttribute('download', 'ProtocoloBEMEQI.xlsx'); 
         document.body.appendChild(link);
         link.click();
